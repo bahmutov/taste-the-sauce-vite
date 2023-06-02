@@ -1,4 +1,4 @@
-# taste-the-sauce-vite
+# taste-the-sauce-vite [![ci](https://github.com/bahmutov/taste-the-sauce-vite/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/bahmutov/taste-the-sauce-vite/actions/workflows/ci.yml)
 
 > Cypress testing tutorial using Vite for the SauceLabs sample web app
 
