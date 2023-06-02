@@ -35,11 +35,11 @@ module.exports = defineConfig({
       'cypress-watch-and-reload': {
         watch: ['src/**'],
       },
-      coverage: false,
-      // coverage: {
-      //   exclude: ['**/src/service*.js'],
-      //   quiet: true,
-      // },
+      coverage: {
+        disable: true,
+        exclude: ['**/src/service*.js'],
+        quiet: true,
+      },
     },
     setupNodeEvents(cypressOn, config) {
       // fix https://github.com/cypress-io/cypress/issues/22428
