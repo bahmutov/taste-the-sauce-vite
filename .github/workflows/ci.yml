@@ -18,17 +18,12 @@ jobs:
       - name: Catch it.only tests 🫴
         run: npm run only
 
-  # run end-to-end and component tests in parallel
+  # run end-to-end tests in parallel
   # https://github.com/bahmutov/cypress-workflows
-  # https://glebbahmutov.com/blog/full-cy-code-coverage/
   tests:
     needs: checks
     uses: bahmutov/cypress-workflows/.github/workflows/split.yml@v2
     with:
-      nE2E: 4 # use 4 containers for E2E tests
-      # disable the component tests for now
-      # nComponent: 2 # use 2 containers for component tests
+      nE2E: 2 # use 2 containers for E2E tests
       start: npm start
       wait-on: 'http://127.0.0.1:3000'
-      # merge E2E and component code coverage into a single report
-      coverage: true
