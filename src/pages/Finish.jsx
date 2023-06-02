@@ -1,6 +1,6 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
-import PonyExpress from '../../public/assets/img/pony-express.png'
+import PonyExpress from '../img/pony-express.png'
 import SwagLabsFooter from '../components/Footer'
 import HeaderContainer from '../components/HeaderContainer'
 import PropTypes from 'prop-types'

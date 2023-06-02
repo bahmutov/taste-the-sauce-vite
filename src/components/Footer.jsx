@@ -1,5 +1,5 @@
 import React from 'react'
-import SwagBotFooter from '../../public/assets/img/SwagBot_Footer_graphic.png'
+import SwagBotFooter from '/src/img/SwagBot_Footer_graphic.png'
 import './Footer.css'
 
 const SwagLabsFooter = () => {

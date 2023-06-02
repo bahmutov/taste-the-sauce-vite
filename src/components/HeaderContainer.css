@@ -16,8 +16,8 @@
 }
 
 .primary_header .app_logo {
-  background: url("../assets/img/SwagLabs_logo.png") no-repeat center center;
-  background: url("../assets/svg/logo3x.svg") no-repeat center center,
+  background: url('/assets/img/SwagLabs_logo.png') no-repeat center center;
+  background: url('./src/svg/logo3x.svg') no-repeat center center,
     linear-gradient(transparent, transparent);
   text-align: center;
   margin: 0 50px;
@@ -50,8 +50,8 @@
 }
 
 .header_secondary_container .peek {
-  background: url("../assets/img/headerBot2x.png") no-repeat center center;
-  background: url("../assets/svg/headerBot3x.svg") no-repeat center center,
+  background: url('../assets/img/headerBot2x.png') no-repeat center center;
+  background: url('../assets/svg/headerBot3x.svg') no-repeat center center,
     linear-gradient(transparent, transparent);
   display: block;
   height: 91px;
