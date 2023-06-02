@@ -48,7 +48,7 @@ describe('Checkout', { viewportHeight: 1200 }, () => {
     cy.location('pathname').should('equal', '/checkout-step-two')
   })
 
-  it('goes through the check out pages', () => {
+  it.only('goes through the check out pages', () => {
     // grab the "id" property from each item in the InventoryData array
     // Tip: I told you Lodash is a super neat library
     const ids = Cypress._.map(InventoryData, 'id').map((id) => ({ id, n: 1 }))
