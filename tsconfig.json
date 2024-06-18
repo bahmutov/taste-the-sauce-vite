@@ -26,5 +26,6 @@
     "cypress/e2e/**/*.js",
     "cypress/e2e/**/*.ts",
     "src/**/*.cy.js"
-  ]
+  ],
+  "exclude": ["coverage", "node_modules"]
 }
