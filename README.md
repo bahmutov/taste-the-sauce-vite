@@ -6,6 +6,8 @@
 
 🎓 See [Testing The Swag Store](https://cypress.tips/courses/swag-store) course
 
+- [Bonus 59: E2E code coverage using Vite](https://cypress.tips/courses/swag-store/lessons/bonus59)
+
 ## See also
 
 - Looking for Create-React-App version of this application? Check out [bahmutov/taste-the-sauce](https://github.com/bahmutov/taste-the-sauce)
