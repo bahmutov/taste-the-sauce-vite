@@ -9,9 +9,17 @@ export default defineConfig({
   build: {
     sourcemap: true,
   },
-  // TODO: include the IstanbulPlugin in the plugins array
-  // to instrument the bundled code
-  plugins: [react(), svgr()],
+  plugins: [
+    react(),
+    svgr(),
+    // TODO: include the IstanbulPlugin in the plugins array
+    // to instrument the bundled code
+    IstanbulPlugin({
+      include: 'src/*',
+      exclude: ['node_modules', 'cypress/', '*.cy.js'],
+      extension: ['.js', '.jsx', '.ts', '.tsx'],
+    }),
+  ],
   server: {
     port: 3000,
     host: '127.0.0.1',
