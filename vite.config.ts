@@ -14,11 +14,6 @@ export default defineConfig({
     svgr(),
     // TODO: include the IstanbulPlugin in the plugins array
     // to instrument the bundled code
-    IstanbulPlugin({
-      include: 'src/*',
-      exclude: ['node_modules', 'cypress/', '*.cy.js'],
-      extension: ['.js', '.jsx', '.ts', '.tsx'],
-    }),
   ],
   server: {
     port: 3000,
