@@ -68,6 +68,16 @@ function Login(props) {
     setPassword(evt.target.value)
   }
 
+  if (error && window.Notification) {
+    Notification.requestPermission().then((permission) => {
+      if (permission === 'granted') {
+        new Notification('Error', {
+          body: error,
+        })
+      }
+    })
+  }
+
   return (
     <div>
       <div className="login_logo" />
@@ -100,11 +110,6 @@ function Login(props) {
                   // Custom
                   autoCorrect="off"
                   autoCapitalize="none"
-                />
-                <ErrorMessage
-                  isError={Boolean(error)}
-                  errorMessage={`Epic sadface: ${error}`}
-                  onClick={dismissError}
                 />
                 <SubmitButton
                   // `btn_action` has no style function
