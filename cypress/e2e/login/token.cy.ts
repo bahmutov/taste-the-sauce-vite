@@ -12,7 +12,7 @@ it('saves the access token', () => {
   // check that it is saved
   // https://on.cypress.io/window
   // https://on.cypress.io/then
-  cy.window().then((win) => {
+  cy.window().should((win) => {
     const user = win.localStorage.getItem('user_session_name')
     expect(user, 'username in local storage').to.eq('standard_user')
   })
