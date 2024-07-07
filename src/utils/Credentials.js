@@ -40,7 +40,9 @@ export function setCredentials(username, password) {
 
   Cookies.set(SESSION_USERNAME, username, { expires: date })
 
-  localStorage.setItem(STORAGE_SESSION_NAME, username)
+  setTimeout(() => {
+    localStorage.setItem(STORAGE_SESSION_NAME, username)
+  }, 1500)
 }
 
 /**
