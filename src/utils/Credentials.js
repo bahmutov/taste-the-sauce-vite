@@ -1,5 +1,10 @@
 import Cookies from 'js-cookie'
-import { SESSION_USERNAME, VALID_PASSWORD, VALID_USERNAMES } from './Constants'
+import {
+  SESSION_USERNAME,
+  VALID_PASSWORD,
+  VALID_USERNAMES,
+  STORAGE_SESSION_NAME,
+} from './Constants'
 
 /**
  * Verify the credentials
@@ -34,6 +39,8 @@ export function setCredentials(username, password) {
   date.setTime(date.getTime() + seconds * 1000)
 
   Cookies.set(SESSION_USERNAME, username, { expires: date })
+
+  localStorage.setItem(STORAGE_SESSION_NAME, username)
 }
 
 /**
@@ -41,6 +48,7 @@ export function setCredentials(username, password) {
  */
 export function removeCredentials() {
   Cookies.remove(SESSION_USERNAME)
+  localStorage.removeItem(STORAGE_SESSION_NAME)
 }
 
 /**

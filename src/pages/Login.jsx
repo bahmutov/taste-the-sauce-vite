@@ -68,16 +68,6 @@ function Login(props) {
     setPassword(evt.target.value)
   }
 
-  if (error && window.Notification) {
-    Notification.requestPermission().then((permission) => {
-      if (permission === 'granted') {
-        new Notification('Error', {
-          body: error,
-        })
-      }
-    })
-  }
-
   return (
     <div>
       <div className="login_logo" />

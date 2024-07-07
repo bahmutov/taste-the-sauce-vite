@@ -17,3 +17,4 @@ export const ROUTES = {
 }
 export const CART_CONTENTS = 'cart-contents'
 export const SESSION_USERNAME = 'session-username'
+export const STORAGE_SESSION_NAME = 'user_session_name'
