@@ -23,6 +23,9 @@ it('shows the "item in the cart" badge', { viewportHeight: 1600 }, () => {
   LoginPage.getLogin().click()
   cy.location('pathname').should('equal', '/inventory')
 
+  // there is no red dot badge initially
+  cy.get('.shopping_cart_link').should('be.visible').and(notHaveDotBadge)
+
   const itemName = 'Sauce Labs Bike Light'
   cy.contains('.inventory_item', itemName)
     .contains('button', 'Add to cart')
