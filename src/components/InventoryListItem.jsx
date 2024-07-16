@@ -19,9 +19,11 @@ const InventoryListItem = (props) => {
       }
     }
 
-    ShoppingCart.addItem(itemId)
-    setItemInCart(true)
-    dataLayer.push({ event: 'addToCart', itemId })
+    setTimeout(() => {
+      ShoppingCart.addItem(itemId)
+      setItemInCart(true)
+      dataLayer.push({ event: 'addToCart', itemId })
+    }, 1000)
   }
 
   const removeFromCart = (itemId) => {
@@ -32,9 +34,11 @@ const InventoryListItem = (props) => {
       }
     }
 
-    ShoppingCart.removeItem(itemId)
-    setItemInCart(false)
-    dataLayer.push({ event: 'removeFromCart', itemId })
+    setTimeout(() => {
+      ShoppingCart.removeItem(itemId)
+      setItemInCart(false)
+      dataLayer.push({ event: 'removeFromCart', itemId })
+    }, 1000)
   }
 
   let linkId = id
