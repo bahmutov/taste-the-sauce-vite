@@ -33,7 +33,7 @@ const InventoryListItem = (props) => {
 
     setTimeout(() => {
       const url = new URL(location)
-      url.searchParams.set('count', 1)
+      url.searchParams.set('count', '1&2')
       window.history.pushState({}, '', url)
     }, Math.random() * 1000)
   }
