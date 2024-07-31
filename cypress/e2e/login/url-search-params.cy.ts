@@ -19,7 +19,10 @@ it('controls the URL search params (check the search string)', () => {
   // and the given item with id
   // https://on.cypress.io/location
   // Q: is the search string always in the same order?
-  cy.location('search').should('include', `count=1&item=${itemId}`)
+  cy.location('search').should('be.oneOf', [
+    `?count=1&item=${itemId}`,
+    `?item=${itemId}&count=1`,
+  ])
 })
 
 it('controls the URL search params (multiple assertions)', () => {
