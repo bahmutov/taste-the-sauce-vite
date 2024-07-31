@@ -8,6 +8,7 @@
       "vite-plugin-svgr/client"
     ],
     "target": "es2016",
+    "lib": ["es2019", "dom"],
     "strict": true,
     "allowJs": true,
     "noEmit": true,

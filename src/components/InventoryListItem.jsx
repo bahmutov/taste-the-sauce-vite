@@ -24,6 +24,18 @@ const InventoryListItem = (props) => {
       setItemInCart(true)
       dataLayer.push({ event: 'addToCart', itemId })
     }, 1000)
+
+    setTimeout(() => {
+      const url = new URL(location)
+      url.searchParams.set('item', itemId)
+      window.history.pushState({}, '', url)
+    }, Math.random() * 1000)
+
+    setTimeout(() => {
+      const url = new URL(location)
+      url.searchParams.set('count', 1)
+      window.history.pushState({}, '', url)
+    }, Math.random() * 1000)
   }
 
   const removeFromCart = (itemId) => {
