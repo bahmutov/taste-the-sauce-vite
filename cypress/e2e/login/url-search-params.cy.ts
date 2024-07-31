@@ -19,10 +19,6 @@ it('controls the URL search params (check the search string)', () => {
   // and the given item with id
   // https://on.cypress.io/location
   // Q: is the search string always in the same order?
-  cy.location('search').should('be.oneOf', [
-    `?count=${encodeURIComponent('1&2')}&item=${itemId}`,
-    `?item=${itemId}&count=${encodeURIComponent('1&2')}`,
-  ])
 })
 
 it('controls the URL search params (multiple assertions)', () => {
@@ -31,9 +27,6 @@ it('controls the URL search params (multiple assertions)', () => {
   // https://on.cypress.io/location
   // check each argument separately
   // using its own assertion
-  cy.location('search')
-    .should('include', `count=${encodeURIComponent('1&2')}`)
-    .and('include', `item=${itemId}`)
 })
 
 it('controls the URL search params (parse URLSearchParams)', () => {
@@ -42,11 +35,6 @@ it('controls the URL search params (parse URLSearchParams)', () => {
   // https://on.cypress.io/location
   // and construct the URLSearchParams object
   // Tip: URLSearchParams decodes the values
-  cy.location('search').should((search) => {
-    const params = new URLSearchParams(search)
-    expect(params.get('count')).to.equal('1&2')
-    expect(params.get('item')).to.equal(String(itemId))
-  })
 })
 
 it('has only count and item search params', () => {
@@ -55,14 +43,6 @@ it('has only count and item search params', () => {
   // https://on.cypress.io/location
   // convert URLSearchParams to a plain object
   // and use "deep.equal" assertion
-  cy.location('search').should((search) => {
-    const params = new URLSearchParams(search)
-    const args = Object.fromEntries(params)
-    expect(args, 'params').to.deep.equal({
-      count: '1&2',
-      item: String(itemId),
-    })
-  })
 })
 
 it('has only count and item search params (cypress-map)', () => {
@@ -73,14 +53,4 @@ it('has only count and item search params (cypress-map)', () => {
   // and cypress-map queries
   // Tip: map the properties to their types
   // before comparing the object
-  cy.location('search')
-    .make(URLSearchParams)
-    .toPlainObject('entries')
-    .map({
-      item: Number,
-    })
-    .should('deep.equal', {
-      count: '1&2',
-      item: itemId,
-    })
 })
