@@ -1,16 +1,11 @@
 import { LoginInfo } from '.'
 import { LoginPage } from '@support/pages/login.page'
-// https://github.com/bahmutov/cypress-skip-this-test
-// @ts-ignore
-import { skipIfPreviousTestsFailed } from 'cypress-skip-this-test'
 
 describe(
   'User',
   { viewportHeight: 1200, testIsolation: false, scrollBehavior: false },
   () => {
     const user: LoginInfo = Cypress.env('users').standard
-
-    beforeEach(skipIfPreviousTestsFailed)
 
     it('logs in', () => {
       // introduce an error in this test
