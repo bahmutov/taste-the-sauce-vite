@@ -8,7 +8,7 @@ describe(
     const user: LoginInfo = Cypress.env('users').standard
 
     it('logs in', () => {
-      LoginPage.login('user.username', user.password)
+      LoginPage.login(user.username, user.password)
       cy.visit('/inventory')
     })
 
