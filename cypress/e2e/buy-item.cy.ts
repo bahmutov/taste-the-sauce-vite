@@ -1,5 +1,8 @@
 import { LoginInfo } from '.'
 import { LoginPage } from '@support/pages/login.page'
+// https://github.com/bahmutov/cypress-skip-this-test
+// @ts-ignore
+import { skipIfPreviousTestsFailed } from 'cypress-skip-this-test'
 
 describe(
   'User',
@@ -7,7 +10,13 @@ describe(
   () => {
     const user: LoginInfo = Cypress.env('users').standard
 
+    beforeEach(skipIfPreviousTestsFailed)
+
     it('logs in', () => {
+      // introduce an error in this test
+      // can you skip the rest of the tests
+      // if this test fails?
+      // Tip: use https://github.com/bahmutov/cypress-skip-this-test
       LoginPage.login(user.username, user.password)
       cy.visit('/inventory')
     })
