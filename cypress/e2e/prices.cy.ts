@@ -23,8 +23,6 @@ describe('Prices', { viewportHeight: 1200, scrollBehavior: false }, () => {
   it('shows the item prices', () => {
     LoginPage.login(user.username, user.password)
     cy.visit('/inventory')
-    // we could pass any number for `formatPrice`
-    // and the type check would still work 🤔
     // declare the price as cents using "<number> as cents"
     // to be able to pass it to "formatPrice" function
     const n = 2999 as cents
