@@ -1,5 +1,7 @@
 /// <reference types="cypress" />
 declare namespace Cypress {
+  type LoginInfo = import('../e2e').LoginInfo
+
   interface Chainable {
     /**
      * Fill the current form (the parent subject)
@@ -17,5 +19,22 @@ declare namespace Cypress {
      *  getByTest('checkout').should('be.visible')
      */
     getByTest(testId: string): Chainable<JQuery<HTMLElement>>
+  }
+
+  interface Cypress {
+    /**
+     * Returns an object with configured users. Values are set
+     * using in the `cypress.config.js` or environment variables.
+     * @see https://on.cypress.io/configuration
+     */
+    env(key: 'users'): {
+      /**
+       * The "normal" user login information
+       */
+      standard: LoginInfo
+      lockedOut: LoginInfo
+      problem: LoginInfo
+      glitch: LoginInfo
+    }
   }
 }
