@@ -22,19 +22,6 @@ declare namespace Cypress {
   }
 
   interface Cypress {
-    /**
-     * Returns an object with configured users. Values are set
-     * using in the `cypress.config.js` or environment variables.
-     * @see https://on.cypress.io/configuration
-     */
-    env(key: 'users'): {
-      /**
-       * The "normal" user login information
-       */
-      standard: LoginInfo
-      lockedOut: LoginInfo
-      problem: LoginInfo
-      glitch: LoginInfo
-    }
+    // give types to the return value from the method "env('users')"
   }
 }
