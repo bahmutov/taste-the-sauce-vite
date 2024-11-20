@@ -4,6 +4,17 @@ import { InventoryData } from '../utils/InventoryData'
 import { ShoppingCart } from '../utils/shopping-cart'
 
 describe('InventoryListItem', () => {
+  it('loads the thumbnail image', () => {
+    const item = InventoryData[3]
+    cy.mountWithRouter(<InventoryListItem {...item} />)
+    cy.log('**thumbnail loads**')
+    cy.get('img.inventory_item_img')
+      .first()
+      .should('be.visible')
+      .should('have.prop', 'naturalWidth')
+      .should('be.greaterThan', 0)
+  })
+
   it('adds an item to the cart', () => {
     // pick an item from the inventory list
     const item = InventoryData[3]

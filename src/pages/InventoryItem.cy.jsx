@@ -3,7 +3,7 @@ import InventoryItem from './InventoryItem'
 import { InventoryData } from '../utils/InventoryData'
 import { setCredentials, isProblemUser } from '../utils/Credentials'
 import { ShoppingCart } from '../utils/shopping-cart'
-// the "@cypress" Webpack alias is defined in the "cypress.config.js"
+// the "@cypress" path alias is defined in the Cypress config file
 import { InventoryPage } from '@cypress/support/pages/inventory.page'
 
 describe('InventoryItem', { viewportHeight: 1000 }, () => {

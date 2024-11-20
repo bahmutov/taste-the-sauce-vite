@@ -8,7 +8,7 @@ import { ROUTES } from '../utils/Constants'
 import Button, { BUTTON_SIZES, BUTTON_TYPES } from './Button'
 
 const InventoryListItem = (props) => {
-  const { desc, id, image_url, history, name, price, badge } = props
+  const { desc, id, image_url, history, name, price } = props
   const [itemInCart, setItemInCart] = useState(ShoppingCart.isItemInCart(id))
 
   const addToCart = (itemId) => {
@@ -19,23 +19,9 @@ const InventoryListItem = (props) => {
       }
     }
 
-    setTimeout(() => {
-      ShoppingCart.addItem(itemId)
-      setItemInCart(true)
-      dataLayer.push({ event: 'addToCart', itemId })
-    }, 1000)
-
-    setTimeout(() => {
-      const url = new URL(location)
-      url.searchParams.set('item', itemId)
-      window.history.pushState({}, '', url)
-    }, Math.random() * 1000)
-
-    setTimeout(() => {
-      const url = new URL(location)
-      url.searchParams.set('count', 1)
-      window.history.pushState({}, '', url)
-    }, Math.random() * 1000)
+    ShoppingCart.addItem(itemId)
+    setItemInCart(true)
+    dataLayer.push({ event: 'addToCart', itemId })
   }
 
   const removeFromCart = (itemId) => {
@@ -46,11 +32,9 @@ const InventoryListItem = (props) => {
       }
     }
 
-    setTimeout(() => {
-      ShoppingCart.removeItem(itemId)
-      setItemInCart(false)
-      dataLayer.push({ event: 'removeFromCart', itemId })
-    }, 1000)
+    ShoppingCart.removeItem(itemId)
+    setItemInCart(false)
+    dataLayer.push({ event: 'removeFromCart', itemId })
   }
 
   let linkId = id
@@ -89,11 +73,7 @@ const InventoryListItem = (props) => {
             history.push(itemLink)
           }}
         >
-          <img
-            alt={name}
-            className="inventory_item_img"
-            src={`/assets/img/${url}`}
-          />
+          <img alt={name} className="inventory_item_img" src={`/img/${url}`} />
         </a>
       </div>
       <div className="inventory_item_description">
@@ -106,11 +86,7 @@ const InventoryListItem = (props) => {
               history.push(itemLink)
             }}
           >
-            <div
-              className={`inventory_item_name ${badge ? 'inventory_new_item_badge' : ''}`}
-            >
-              {name}
-            </div>
+            <div className="inventory_item_name">{name}</div>
           </a>
           <div className="inventory_item_desc">{desc}</div>
         </div>
@@ -150,8 +126,6 @@ InventoryListItem.propTypes = {
    * The price of the product
    */
   price: PropTypes.number.isRequired,
-
-  badge: PropTypes.string,
 }
 
 export default withRouter(InventoryListItem)

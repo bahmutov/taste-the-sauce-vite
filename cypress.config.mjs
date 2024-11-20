@@ -71,7 +71,6 @@ export default defineConfig({
         plugins: [
           IstanbulPlugin({
             include: 'src/*',
-            exclude: ['**/*.cy.jsx'],
             extension: ['.js', '.jsx', '.ts', '.tsx'],
           }),
         ],

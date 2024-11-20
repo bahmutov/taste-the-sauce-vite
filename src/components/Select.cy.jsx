@@ -60,3 +60,18 @@ it('skips the data-test attribute', () => {
   // confirm the select element has "data-test" attribute with expected value
   cy.get('select').should('have.attr', 'data-test', 'my-select')
 })
+
+it('loads the SVG icon', () => {
+  const options = [
+    {
+      key: 'a to z',
+      value: 'A to Z',
+    },
+    {
+      key: 'z to a',
+      value: 'Z to A',
+    },
+  ]
+  cy.mount(<Select options={options} />)
+  // TODO: confirm the SVG :before pseudo-element is visible
+})

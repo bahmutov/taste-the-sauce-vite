@@ -86,7 +86,6 @@ const Inventory = () => {
                       name={item.name}
                       desc={item.desc}
                       price={item.price}
-                      badge={item.badge}
                     />
                   )
                 })}

@@ -14,10 +14,11 @@ export const InventoryItem = (props) => {
     window.scrollTo(0, 0)
   }, [])
   const { history } = props
-  // Get our queryparams now
-  const queryParams = new URLSearchParams(
-    window.location.search || props.search,
-  )
+  // Get our query params now
+  const query = window.location.search.includes('id')
+    ? window.location.search
+    : props.search
+  const queryParams = new URLSearchParams(query)
   let inventoryId = -1
   let item
 
@@ -117,7 +118,7 @@ export const InventoryItem = (props) => {
                 <img
                   alt={item.name}
                   className="inventory_details_img"
-                  src={`/assets/img/${item.image_url}`}
+                  src={`/img/${item.image_url}`}
                 />
               </div>
               <div className="inventory_details_desc_container">

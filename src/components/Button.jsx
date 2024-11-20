@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import './Button.css'
-import backPng from '../img/arrow.png'
 
 export const BUTTON_TYPES = {
   ACTION: 'action',
@@ -27,7 +26,7 @@ const Button = ({
   const extraClass = customClass ? ` ${customClass}` : ''
   const buttonSize = ` btn_${size}`
   const BackImage = () => (
-    <img src={backPng} className="back-image" alt="Go back" />
+    <img src="/img/arrow.png" className="back-image" alt="Go back" />
   )
 
   return (

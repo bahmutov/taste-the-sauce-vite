@@ -5,10 +5,6 @@ import { slide as Menu } from 'react-burger-menu'
 import { ShoppingCart } from '../utils/shopping-cart'
 import { ROUTES } from '../utils/Constants'
 import { isProblemUser, removeCredentials } from '../utils/Credentials'
-import menuClosePng from '../img/close.png'
-import menuCloseSvg from '../svg/close@3x.svg'
-import menuIconPng from '../img/menu.png'
-import menuIconSvg from '../svg/menu3x.svg'
 import './DrawerMenu.css'
 
 const DrawerMenu = ({ history }) => {
@@ -23,10 +19,10 @@ const DrawerMenu = ({ history }) => {
   return (
     <Menu
       customBurgerIcon={
-        <img src={menuIconPng} srcSet={menuIconSvg} alt="Open Menu" />
+        <img src="/img/menu.png" srcSet="/svg/menu3x.svg" alt="Open Menu" />
       }
       customCrossIcon={
-        <img src={menuClosePng} srcSet={menuCloseSvg} alt="Close Menu" />
+        <img src="/img/close.png" srcSet="/svg/close@3x.svg" alt="Close Menu" />
       }
       outerContainerId={'page_wrapper'}
       pageWrapId={'contents_wrapper'}

@@ -19,11 +19,14 @@ const CartButton = (props) => {
     ShoppingCart.registerCartListener(cartListener)
   }, [])
 
-  const hasItems = cartContents.length > 0
+  if (cartContents.length > 0) {
+    cartBadge = (
+      <span className="shopping_cart_badge">{cartContents.length}</span>
+    )
+  }
 
-  const className = `shopping_cart_link ${hasItems ? 'shopping_cart_link_with_items' : ''}`
   return (
-    <a className={className} onClick={() => history.push(ROUTES.CART)}>
+    <a className="shopping_cart_link" onClick={() => history.push(ROUTES.CART)}>
       {cartBadge}
     </a>
   )

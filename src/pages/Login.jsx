@@ -101,6 +101,11 @@ function Login(props) {
                   autoCorrect="off"
                   autoCapitalize="none"
                 />
+                <ErrorMessage
+                  isError={Boolean(error)}
+                  errorMessage={`Epic sadface: ${error}`}
+                  onClick={dismissError}
+                />
                 <SubmitButton
                   // `btn_action` has no style function
                   // but is there for backwards compatibility

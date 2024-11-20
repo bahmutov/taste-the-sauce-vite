@@ -1,6 +1,5 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
-import PonyExpress from '../img/pony-express.png'
 import SwagLabsFooter from '../components/Footer'
 import HeaderContainer from '../components/HeaderContainer'
 import PropTypes from 'prop-types'
@@ -22,7 +21,11 @@ const Finish = ({ history }) => {
             Your order has been dispatched, and will arrive just as fast as the
             pony can get there!
           </div>
-          <img alt="Pony Express" className="pony_express" src={PonyExpress} />
+          <img
+            alt="Pony Express"
+            className="pony_express"
+            src="/img/pony-express.png"
+          />
           <Button
             label="Back Home"
             onClick={() => history.push(ROUTES.INVENTORY)}

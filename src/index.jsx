@@ -1,16 +1,16 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { Route, BrowserRouter as Router } from 'react-router-dom'
-import './index.css'
-import Login from './pages/Login'
-import Inventory from './pages/Inventory'
-import InventoryItem from './pages/InventoryItem'
-import Cart from './pages/Cart'
-import CheckOutStepOne from './pages/CheckOutStepOne'
-import CheckOutStepTwo from './pages/CheckOutStepTwo'
-import Finish from './pages/Finish'
-import { ROUTES } from './utils/Constants'
-import PrivateRoute from './components/PrivateRoute'
+import React from "react";
+import ReactDOM from "react-dom";
+import { Route, BrowserRouter as Router } from "react-router-dom";
+import "./index.css";
+import Login from "./pages/Login";
+import Inventory from "./pages/Inventory";
+import InventoryItem from "./pages/InventoryItem";
+import Cart from "./pages/Cart";
+import CheckOutStepOne from "./pages/CheckOutStepOne";
+import CheckOutStepTwo from "./pages/CheckOutStepTwo";
+import Finish from "./pages/Finish";
+import { ROUTES } from "./utils/Constants";
+import PrivateRoute from "./components/PrivateRoute";
 
 const routing = (
   <Router>
@@ -22,6 +22,6 @@ const routing = (
     <PrivateRoute path={ROUTES.CHECKOUT_STEP_TWO} component={CheckOutStepTwo} />
     <PrivateRoute path={ROUTES.CHECKOUT_COMPLETE} component={Finish} />
   </Router>
-)
+);
 
-ReactDOM.render(routing, document.getElementById('root'))
+ReactDOM.render(routing, document.getElementById("root"));

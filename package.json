@@ -44,6 +44,8 @@
     "preview": "vite preview",
     "test": "cypress run",
     "cy:open": "cypress open --e2e",
+    "cy:component": "cypress open --component --browser electron",
+    "run:component": "cypress run --component",
     "dev": "start-test 3000 cy:open",
     "ci": "start-test 3000",
     "lint": "tsc --noEmit --pretty",
@@ -74,10 +76,6 @@
     "include": [
       "src/**/*.js",
       "src/**/*.jsx"
-    ],
-    "exclude": [
-      "src/**/*.cy.js",
-      "src/service*.js"
     ]
   }
 }
