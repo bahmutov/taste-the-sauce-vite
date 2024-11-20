@@ -74,6 +74,7 @@ export default defineConfig({
             extension: ['.js', '.jsx', '.ts', '.tsx'],
             // what files do we want to exclude when
             // instrumenting the component tests?
+            extension: ['.js', '.jsx', '.ts', '.tsx'],
           }),
         ],
         resolve: {

@@ -76,6 +76,11 @@
     "include": [
       "src/**/*.js",
       "src/**/*.jsx"
+    ],
+    "exclude": [
+      "src/**/*.cy.js",
+      "src/**/*.cy.jsx",
+      "src/service*.js"
     ]
   }
 }

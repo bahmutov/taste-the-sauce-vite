@@ -12,8 +12,6 @@ export default defineConfig({
   plugins: [
     react(),
     svgr(),
-    // TODO: include the IstanbulPlugin in the plugins array
-    // to instrument the bundled code
     IstanbulPlugin({
       include: 'src/*',
       exclude: ['node_modules', 'cypress/', '*.cy.js'],
