@@ -1,7 +1,6 @@
 /// <reference types="cypress" />
-declare namespace Cypress {
-  type LoginInfo = import('../e2e').LoginInfo
 
+declare namespace Cypress {
   interface Chainable {
     /**
      * Fill the current form (the parent subject)
@@ -22,6 +21,17 @@ declare namespace Cypress {
   }
 
   interface Cypress {
-    // give types to the return value from the method "env('users')"
+    /**
+     * Returns an object with configured users
+     */
+    env(key: 'users'): {
+      /**
+       * Standard user login information
+       */
+      standard: import('../e2e').LoginInfo
+      lockedOut: import('../e2e').LoginInfo
+      problem: import('../e2e').LoginInfo
+      glitch: import('../e2e').LoginInfo
+    }
   }
 }
