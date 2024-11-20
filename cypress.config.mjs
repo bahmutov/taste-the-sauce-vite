@@ -72,6 +72,8 @@ export default defineConfig({
           IstanbulPlugin({
             include: 'src/*',
             extension: ['.js', '.jsx', '.ts', '.tsx'],
+            // what files do we want to exclude when
+            // instrumenting the component tests?
           }),
         ],
         resolve: {
