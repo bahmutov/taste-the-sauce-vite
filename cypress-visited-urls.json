@@ -1,0 +1,15 @@
+{
+  "cypress/e2e/cart/add-to-cart.cy.ts": {
+    "Cart / adds items to the cart": [
+      "/",
+      "/inventory"
+    ]
+  },
+  "cypress/e2e/cart/cart-app-action.cy.ts": {
+    "Cart / can be controlled via application methods": [
+      "/",
+      "/inventory",
+      "/cart"
+    ]
+  }
+}
