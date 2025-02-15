@@ -1,5 +1,329 @@
 {
   "cypress/e2e/cart/add-to-cart.cy.ts": {
-    "Cart / adds items to the cart": ["/", "/inventory"]
+    "Cart / adds items to the cart": [
+      "/",
+      "/inventory"
+    ]
+  },
+  "cypress/e2e/cart/cart-app-action.cy.ts": {
+    "Cart / can be controlled via application methods": [
+      "/",
+      "/inventory",
+      "/cart"
+    ]
+  },
+  "cypress/e2e/cart/cart.cy.ts": {
+    "Cart / has id and quantity data- attributes": [
+      "/inventory",
+      "/cart"
+    ],
+    "Cart / navigates to the item from the cart": [
+      "/inventory",
+      "/cart",
+      "/inventory-item?id=3"
+    ],
+    "Cart / shows the added items in order they were added": [
+      "/",
+      "/inventory",
+      "/cart"
+    ]
+  },
+  "cypress/e2e/cart/empty-cart.cy.ts": {
+    "Empty cart / disables the Checkout button": [
+      "/",
+      "/inventory",
+      "/cart"
+    ]
+  },
+  "cypress/e2e/cart/instant-cart.cy.ts": {
+    "Cart / shows the cart items": [
+      "/",
+      "/inventory",
+      "/cart"
+    ]
+  },
+  "cypress/e2e/cart/remove-from-cart.cy.ts": {
+    "Cart / removes items from cart": [
+      "/",
+      "/inventory",
+      "/cart"
+    ]
+  },
+  "cypress/e2e/checkout/checkout.cy.ts": {
+    "Checkout / cancels checkout": [
+      "/",
+      "/inventory",
+      "/checkout-step-one",
+      "/cart"
+    ],
+    "Checkout / goes through the check out pages": [
+      "/cart",
+      "/checkout-step-one",
+      "/checkout-step-two",
+      "/checkout-complete",
+      "/inventory"
+    ],
+    "Checkout / requires all inputs": [
+      "/checkout-step-one",
+      "/checkout-step-two"
+    ]
+  },
+  "cypress/e2e/checkout/glitch-user.cy.ts": {
+    "works for performance glitch user": [
+      "/",
+      "/inventory",
+      "/checkout-step-one",
+      "/checkout-step-two",
+      "/checkout-complete"
+    ]
+  },
+  "cypress/e2e/checkout/tax.cy.ts": {
+    "Checkout / shows the tax within limits": [
+      "/",
+      "/inventory",
+      "/checkout-step-one",
+      "/checkout-step-two"
+    ]
+  },
+  "cypress/e2e/checkout/total.cy.ts": {
+    "Checkout / can purchase two bike lights": [
+      "/inventory",
+      "/cart",
+      "/checkout-step-one",
+      "/checkout-step-two"
+    ],
+    "Checkout / shows the right total price": [
+      "/",
+      "/inventory",
+      "/checkout-step-one",
+      "/checkout-step-two"
+    ]
+  },
+  "cypress/e2e/inventory/images-load.cy.ts": {
+    "Regular user / loads every image": [
+      "/",
+      "/inventory"
+    ]
+  },
+  "cypress/e2e/inventory/images.cy.ts": {
+    "Regular user / loads every image": [
+      "/inventory"
+    ],
+    "Regular user / sees unique thumbnail images": [
+      "/",
+      "/inventory"
+    ]
+  },
+  "cypress/e2e/inventory/inventory.cy.ts": {
+    "Inventory / has every item from the inventory": [
+      "/",
+      "/inventory"
+    ]
+  },
+  "cypress/e2e/inventory/item.cy.js": {
+    "Inventory / has an item with details": [
+      "/",
+      "/inventory"
+    ]
+  },
+  "cypress/e2e/inventory/item2.cy.js": {
+    "Inventory / has an item with details": [
+      "/",
+      "/inventory"
+    ]
+  },
+  "cypress/e2e/inventory/item3.cy.js": {
+    "Inventory / has an item with details": [
+      "/",
+      "/inventory"
+    ]
+  },
+  "cypress/e2e/inventory/no-isolation.cy.js": {
+    "sort without test isolation / by name from A to Z": [],
+    "sort without test isolation / by name from Z to A": [],
+    "sort without test isolation / by price highest to highest": [],
+    "sort without test isolation / by price lowest to highest": []
+  },
+  "cypress/e2e/inventory/product-ids.cy.ts": {
+    "Products / have unique ids": [
+      "/",
+      "/inventory"
+    ]
+  },
+  "cypress/e2e/inventory/product.cy.ts": {
+    "Product / navigates by clicking the thumbnail image": [
+      "/inventory",
+      "/inventory-item?id=5"
+    ],
+    "Product / shows item not found": [
+      "/inventory",
+      "/inventory-item?id=10001"
+    ],
+    "Product / shows the item": [
+      "/",
+      "/inventory",
+      "/inventory-item?id=5"
+    ]
+  },
+  "cypress/e2e/inventory/sort-tests-session.cy.js": {
+    "sorting session / by name from A to Z": [
+      "/inventory"
+    ],
+    "sorting session / by name from Z to A": [
+      "/inventory"
+    ],
+    "sorting session / by price highest to highest": [
+      "/inventory"
+    ],
+    "sorting session / by price lowest to highest": [
+      "/",
+      "/inventory"
+    ]
+  },
+  "cypress/e2e/inventory/sort-tests.cy.ts": {
+    "sorting tests / by name from A to Z": [
+      "/inventory"
+    ],
+    "sorting tests / by name from Z to A": [
+      "/inventory"
+    ],
+    "sorting tests / by price highest to highest": [
+      "/inventory"
+    ],
+    "sorting tests / by price lowest to highest": [
+      "/",
+      "/inventory"
+    ],
+    "sorting tests / does nothing for invalid sort options": [
+      "/inventory"
+    ]
+  },
+  "cypress/e2e/inventory/sorted.cy.js": {
+    "sorted / by price": [
+      "/",
+      "/inventory"
+    ]
+  },
+  "cypress/e2e/inventory/stub-image-load.cy.ts": {
+    "Product / shows a broken thumbnail": [
+      "/",
+      "/inventory",
+      "/inventory-item?id=1"
+    ]
+  },
+  "cypress/e2e/login/call-login.cy.js": {
+    "logs in": [
+      "/",
+      "/inventory"
+    ],
+    "logs in by typing": [
+      "/",
+      "/inventory"
+    ]
+  },
+  "cypress/e2e/login/direct-attempt.cy.ts": {
+    "anonymous user / gets an error trying to visit the inventory page": [
+      "/inventory",
+      "/"
+    ]
+  },
+  "cypress/e2e/login/invalid.cy.ts": {
+    "Invalid user information / wrong password": [
+      "/"
+    ],
+    "Invalid user information / wrong username and password": [
+      "/"
+    ]
+  },
+  "cypress/e2e/login/locked-out-user.cy.ts": {
+    "Locked out user / shows a login error": [
+      "/"
+    ],
+    "Locked out user / shows a login error refactored": [
+      "/"
+    ]
+  },
+  "cypress/e2e/login/login-for-sort.cy.ts": {
+    "sorting / by name from A to Z": [
+      "/inventory"
+    ],
+    "sorting / by name from Z to A": [
+      "/inventory"
+    ],
+    "sorting / by price highest to highest": [
+      "/inventory"
+    ],
+    "sorting / by price lowest to highest": [
+      "/",
+      "/inventory"
+    ]
+  },
+  "cypress/e2e/login/login-form.cy.ts": {
+    "Login form / shows an error for empty password field": [
+      "/"
+    ],
+    "Login form / shows an error for empty username field": [
+      "/"
+    ]
+  },
+  "cypress/e2e/login/logout.cy.ts": {
+    "logs out": [
+      "/",
+      "/inventory"
+    ]
+  },
+  "cypress/e2e/misc/gtm-datalayer.cy.ts": {
+    "dataLayer / pushes cart events": [
+      "/",
+      "/inventory"
+    ]
+  },
+  "cypress/e2e/misc/menu.cy.ts": {
+    "Menu / resets the shopping cart": [
+      "/inventory",
+      "/cart"
+    ],
+    "Menu / shows all items": [
+      "/",
+      "/inventory",
+      "/cart"
+    ]
+  },
+  "cypress/e2e/problem-user/checkout-step-two.cy.ts": {
+    "Problem user / computes the incorrect order total": [
+      "/",
+      "/inventory",
+      "/checkout-step-two",
+      "/checkout-complete"
+    ],
+    "Problem user / goes to the inventory page on cancel": [
+      "/inventory",
+      "/checkout-step-two"
+    ]
+  },
+  "cypress/e2e/problem-user/checkout.cy.ts": {
+    "Problem user / mishandles the user information form": [
+      "/",
+      "/inventory",
+      "/checkout-step-one"
+    ]
+  },
+  "cypress/e2e/problem-user/inventory-images.cy.ts": {
+    "Problem user / shows 404 thumbnail images": [
+      "/",
+      "/inventory"
+    ]
+  },
+  "cypress/e2e/problem-user/remove-from-cart.cy.ts": {
+    "Problem user / does not remove even items from the cart": [
+      "/",
+      "/inventory"
+    ]
+  },
+  "cypress/e2e/problem-user/sort.cy.ts": {
+    "Problem user / cannot sort": [
+      "/",
+      "/inventory"
+    ]
   }
 }

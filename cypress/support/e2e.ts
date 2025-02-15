@@ -16,8 +16,17 @@ chai.use(require('chai-sorted'))
 // @ts-ignore
 require('cypress-watch-and-reload/support')
 
-// https://github.com/bahmutov/cypress-visited-urls
-import 'cypress-visited-urls/src/support'
-
 // import custom commands
 import './commands'
+
+// https://glebbahmutov.com/blog/collect-tested-urls/
+// @ts-ignore
+import { configureVisitedUrls } from 'cypress-visited-urls'
+
+configureVisitedUrls({
+  filterUrl(url: string) {
+    // remove the item id from the search parameters
+    // return url.replace(/id=\d+/, 'id=:id')
+    return url
+  },
+})
