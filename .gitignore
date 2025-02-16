@@ -29,3 +29,6 @@ storybook-static
 .tmp
 .eslintcache
 cypress/videos/
+playwright-report/
+playwright
+test-results/
