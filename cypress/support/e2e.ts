@@ -23,10 +23,9 @@ import './commands'
 // @ts-ignore
 import { configureVisitedUrls } from 'cypress-visited-urls'
 
+// TODO: remove the item id from the URL search parameters
 configureVisitedUrls({
   filterUrl(url: string) {
-    // remove the item id from the search parameters
-    // return url.replace(/id=\d+/, 'id=:id')
     return url
   },
 })
