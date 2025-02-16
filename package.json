@@ -19,6 +19,10 @@
   },
   "devDependencies": {
     "@bahmutov/cypress-code-coverage": "^2.5.1",
+    "@playwright/experimental-ct-react": "^1.50.1",
+    "@playwright/experimental-ct-react17": "^1.50.1",
+    "@playwright/test": "^1.50.1",
+    "@types/node": "^22.13.4",
     "@vitejs/plugin-react": "^4.2.1",
     "chai-sorted": "^0.2.0",
     "check-code-coverage": "^1.10.4",
@@ -56,7 +60,8 @@
     "only:warn": "stop-only --warn --folder cypress/e2e --folder src",
     "names": "find-cypress-specs --names",
     "names:component": "find-cypress-specs --names --component",
-    "badge:tests": "find-cypress-specs --test-counts --update-badge"
+    "badge:tests": "find-cypress-specs --test-counts --update-badge",
+    "test-ct": "playwright test -c playwright-ct.config.ts"
   },
   "browserslist": {
     "production": [
