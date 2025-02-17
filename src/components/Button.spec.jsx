@@ -33,6 +33,7 @@ test('sets the test id', async ({ mount }) => {
 
 test('creates a Back button with an arrow image', async ({ mount }) => {
   // mount the Button with the type prop set to "back"
+  //
   // confirm that inside the button element with class "btn"
   // there is an image with alt text "Go back"
   // and the image loads its source without errors
