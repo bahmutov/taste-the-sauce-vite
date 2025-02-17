@@ -6,3 +6,14 @@ test('shows a button', async ({ mount }) => {
   // with the prop `label` set to 'Test button'
   // confirm the component contains text 'Test button'
 })
+
+test('passes custom class name', async ({ mount }) => {
+  // mount the Button with the customClass prop set to "myClass"
+  // confirm the page contains a button with the class "myClass"
+})
+
+test('sets the test id', async ({ mount }) => {
+  // mount the Button with the testId prop set to "myTestId"
+  // confirm the button with the text "Test button" has
+  // the data-test, name, and id set to "myTestId"
+})
