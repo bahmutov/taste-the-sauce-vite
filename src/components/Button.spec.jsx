@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/experimental-ct-react17'
 import Button from './Button'
+import { BUTTON_TYPES } from './Button'
 
 test('shows a button', async ({ mount }) => {
   // use the mount command to mount the Button component
