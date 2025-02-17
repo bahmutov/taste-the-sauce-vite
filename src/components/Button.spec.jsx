@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/experimental-ct-react17'
 import Button from './Button'
+import { BUTTON_TYPES } from './Button'
 
 test('shows a button', async ({ mount }) => {
   // use the mount command to mount the Button component
@@ -28,4 +29,21 @@ test('sets the test id', async ({ mount }) => {
   await expect(component).toHaveAttribute('data-test', 'myTestId')
   await expect(component).toHaveAttribute('name', 'myTestId')
   await expect(component).toHaveAttribute('id', 'myTestId')
+})
+
+test('creates a Back button with an arrow image', async ({ mount }) => {
+  // mount the Button with the type prop set to "back"
+  const component = await mount(
+    <Button label="Back" type={BUTTON_TYPES.BACK} />,
+  )
+  // confirm that inside the button element with class "btn"
+  // there is an image with alt text "Go back"
+  // and the image loads its source without errors
+  const image = component.locator('img[alt="Go back"]')
+  await expect(async () => {
+    const width = await image.evaluate((node) => node.naturalWidth)
+    expect(width, 'image width').toBeGreaterThan(0)
+  }).toPass()
+  // this solution could also work in this case
+  await expect(image).not.toHaveJSProperty('naturalWidth', 0)
 })
