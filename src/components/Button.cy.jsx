@@ -29,6 +29,7 @@ it('sets the test id', () => {
 })
 
 it('creates a Back button with an arrow image', () => {
+  // mount the Button with the type prop set to "back"
   cy.mount(<Button label="Back" type={BUTTON_TYPES.BACK} />)
   // confirm that inside the button element with class "btn"
   // there is an image with alt text "Go back"
