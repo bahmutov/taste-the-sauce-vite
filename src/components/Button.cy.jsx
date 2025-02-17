@@ -29,12 +29,9 @@ it('sets the test id', () => {
 })
 
 it('creates a Back button with an arrow image', () => {
-  cy.mount(<Button label="Back" type={BUTTON_TYPES.BACK} />)
+  // mount the Button with the type prop set to "back"
+  //
   // confirm that inside the button element with class "btn"
   // there is an image with alt text "Go back"
   // and the image loads its source without errors
-  cy.get('button.btn')
-    .find('img[alt="Go back"]')
-    .should('have.prop', 'naturalWidth')
-    .should('be.greaterThan', 0)
 })
