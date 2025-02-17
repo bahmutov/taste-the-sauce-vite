@@ -1,5 +1,6 @@
 import React from 'react'
 import Button from './Button'
+import { BUTTON_TYPES } from './Button'
 
 it('shows a button', () => {
   // use the cy.mount command to mount the Button component
@@ -25,4 +26,15 @@ it('sets the test id', () => {
     .should('have.id', 'myTestId')
     .and('have.attr', 'name', 'myTestId')
     .and('have.attr', 'data-test', 'myTestId')
+})
+
+it('creates a Back button with an arrow image', () => {
+  cy.mount(<Button label="Back" type={BUTTON_TYPES.BACK} />)
+  // confirm that inside the button element with class "btn"
+  // there is an image with alt text "Go back"
+  // and the image loads its source without errors
+  cy.get('button.btn')
+    .find('img[alt="Go back"]')
+    .should('have.prop', 'naturalWidth')
+    .should('be.greaterThan', 0)
 })
