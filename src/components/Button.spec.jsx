@@ -15,10 +15,17 @@ test('passes custom class name', async ({ mount }) => {
     <Button label="Test button" customClass="myClass" />,
   )
   // confirm the page contains a button with the class "myClass"
+  await expect(component).toHaveClass(/myClass/)
 })
 
 test('sets the test id', async ({ mount }) => {
   // mount the Button with the testId prop set to "myTestId"
+  const component = await mount(
+    <Button label="Test button" testId="myTestId" />,
+  )
   // confirm the button with the text "Test button" has
   // the data-test, name, and id set to "myTestId"
+  await expect(component).toHaveAttribute('data-test', 'myTestId')
+  await expect(component).toHaveAttribute('name', 'myTestId')
+  await expect(component).toHaveAttribute('id', 'myTestId')
 })
