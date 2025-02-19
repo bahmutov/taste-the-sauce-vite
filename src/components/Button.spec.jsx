@@ -48,7 +48,7 @@ test('creates a Back button with an arrow image', async ({ mount }) => {
   await expect(image).not.toHaveJSProperty('naturalWidth', 0)
 })
 
-test.only('callback prop is called on click', async ({ mount }) => {
+test('callback prop is called on click', async ({ mount }) => {
   // keep track of the clicked state
   let clicked = false
   // mount the Button with the onClick prop set to a small function
