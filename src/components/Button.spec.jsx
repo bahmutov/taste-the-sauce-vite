@@ -66,8 +66,11 @@ test('callback prop is called on click', async ({ mount }) => {
   // confirm the mock function was called
   // by checking if the "clicked" state is true
   await expect
-    .poll(() => {
-      return clicked
-    })
+    .poll(
+      () => {
+        return clicked
+      },
+      { message: 'clicked' },
+    )
     .toBeTruthy()
 })
