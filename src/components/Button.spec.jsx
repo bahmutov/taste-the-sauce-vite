@@ -47,3 +47,23 @@ test('creates a Back button with an arrow image', async ({ mount }) => {
   // this solution could also work in this case
   await expect(image).not.toHaveJSProperty('naturalWidth', 0)
 })
+
+test.only('callback prop is called on click', async ({ mount }) => {
+  // keep track of the clicked state
+  let clicked = false
+  // mount the Button with the onClick prop set to a small function
+  // that changes "clicked" to true
+  const component = await mount(
+    <Button
+      label="Test button"
+      onClick={() => {
+        clicked = true
+      }}
+    />,
+  )
+  // click the button component
+  await component.click()
+  // confirm the mock function was called
+  // by checking if the "clicked" state is true
+  expect(clicked, 'clicked').toBeTruthy()
+})
