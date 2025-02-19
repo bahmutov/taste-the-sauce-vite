@@ -40,14 +40,13 @@ it('creates a Back button with an arrow image', () => {
     .should('be.greaterThan', 0)
 })
 
-it.only('callback prop is called on click', () => {
+it('callback prop is called on click', () => {
   // mount the Button with the onClick function stub
   // https://on.cypress.io/stub
   // give the stub an alias "onClick"
   // https://on.cypress.io/as
-  cy.mount(<Button label="Test button" onClick={cy.stub().as('onClick')} />)
+  //
   // click the button component
-  cy.get('button').click()
+  //
   // confirm the stub function was called
-  cy.get('@onClick').should('have.been.calledOnce')
 })
