@@ -39,7 +39,7 @@ const Button = ({
             name: testId,
           }
         : {})}
-      onClick={onClick}
+      onClick={() => setTimeout(onClick, 1000)}
       {...props}
     >
       {type === BUTTON_TYPES.BACK && <BackImage />}
