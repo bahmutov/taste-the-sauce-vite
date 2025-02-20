@@ -13,12 +13,13 @@ test.afterEach(() => {
 test('callback prop is called on click', async ({ mount }) => {
   // mount the Button with the onClick prop set to a small function
   // that changes "clicked" to true
-  const onClick = sandbox.stub()
-  const component = await mount(
-    <Button label="Test button" onClick={onClick} />,
-  )
+  // Tip: create the onClick function stub using the Sinon sandbox
   // click the button component
-  await component.click()
   // confirm the mock function "onClick" was called
-  await expect.poll(() => onClick.calledOnce, { message: 'onClick' }).toBe(true)
+})
+
+test('callback prop is called with arguments', async ({ mount }) => {
+  // the Button component calls the "onClick" prop with a string
+  // confirm the correct string is passed when the button is clicked
+  // Tip: use the "stub.calledOnceWithExactly" method to check
 })
