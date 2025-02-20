@@ -22,3 +22,19 @@ test('callback prop is called on click', async ({ mount }) => {
   // confirm the mock function "onClick" was called
   await expect.poll(() => onClick.calledOnce, { message: 'onClick' }).toBe(true)
 })
+
+test('callback prop is called with arguments', async ({ mount }) => {
+  // the Button component calls the "onClick" prop with a string
+  // confirm the correct string is passed when the button is clicked
+  // Tip: use the "stub.calledOnceWithExactly" method to check
+  const onClick = sandbox.stub()
+  const component = await mount(
+    <Button label="Test button" onClick={onClick} />,
+  )
+  await component.click()
+  await expect
+    .poll(() => onClick.calledOnceWithExactly('Hello from button'), {
+      message: 'onClick',
+    })
+    .toBe(true)
+})
