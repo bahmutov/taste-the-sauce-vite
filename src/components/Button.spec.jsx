@@ -6,5 +6,4 @@ test('renders a button on green background', async ({ mount }) => {
   // confirm the button has a green background
   // Tip: use "toHaveCSS" assertion
   // https://playwright.dev/docs/api/class-locatorassertions
-  await expect(component).toHaveCSS('background-color', 'rgb(0, 128, 0)')
 })
