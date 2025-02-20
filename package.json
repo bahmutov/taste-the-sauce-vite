@@ -37,6 +37,7 @@
     "find-cypress-specs": "^1.33.0",
     "prettier": "^3.2.5",
     "prop-types": "^15.7.2",
+    "sinon": "^19.0.2",
     "start-server-and-test": "^2.0.0",
     "stop-only": "^3.3.1",
     "typescript": "^5.6.3",
