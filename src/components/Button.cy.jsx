@@ -60,3 +60,13 @@ it('callback prop is called with arguments', () => {
     'Hello from button',
   )
 })
+
+it('callback prop is called with arguments with local stub', () => {
+  const onClick = cy.stub()
+  cy.mount(<Button label="Test button" onClick={onClick} />)
+  cy.get('button').click()
+  cy.wrap(onClick).should(
+    'have.been.calledOnceWithExactly',
+    'Hello from button',
+  )
+})
