@@ -51,3 +51,12 @@ it('callback prop is called on click', () => {
   // confirm the stub function was called
   cy.get('@onClick').should('have.been.calledOnce')
 })
+
+it('callback prop is called with arguments', () => {
+  cy.mount(<Button label="Test button" onClick={cy.stub().as('onClick')} />)
+  cy.get('button').click()
+  cy.get('@onClick').should(
+    'have.been.calledOnceWithExactly',
+    'Hello from button',
+  )
+})
