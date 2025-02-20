@@ -17,6 +17,7 @@ import visitedUrlsPlugin from 'cypress-visited-urls/src/plugin'
 const __dirname = import.meta.dirname
 
 export default defineConfig({
+  defaultBrowser: 'electron',
   e2e: {
     // baseUrl, etc
     baseUrl: 'http://localhost:3000',

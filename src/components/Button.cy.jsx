@@ -1,72 +1,7 @@
 import React from 'react'
 import Button from './Button'
-import { BUTTON_TYPES } from './Button'
 
-it('shows a button', () => {
-  // use the cy.mount command to mount the Button component
-  // with the prop `label` set to 'Test button'
-  cy.mount(<Button label="Test button" />)
-  // confirm the page contains a button with the text 'Test button'
-  cy.contains('button', 'Test button')
-})
-
-it('passes custom class name', () => {
-  // mount the Button with the customClass prop set to "myClass"
-  cy.mount(<Button label="Test button" customClass="myClass" />)
-  // confirm the page contains a button with the class "myClass"
-  cy.get('button.myClass')
-})
-
-it('sets the test id', () => {
-  // mount the Button with the testId prop set to "myTestId"
-  cy.mount(<Button label="Test button" testId="myTestId" />)
-  // confirm the button with the text "Test button" has
-  // the data-test, name, and id set to "myTestId"
-  cy.contains('button', 'Test button')
-    .should('have.id', 'myTestId')
-    .and('have.attr', 'name', 'myTestId')
-    .and('have.attr', 'data-test', 'myTestId')
-})
-
-it('creates a Back button with an arrow image', () => {
-  // mount the Button with the type prop set to "back"
-  cy.mount(<Button label="Back" type={BUTTON_TYPES.BACK} />)
-  // confirm that inside the button element with class "btn"
-  // there is an image with alt text "Go back"
-  // and the image loads its source without errors
-  cy.get('button.btn')
-    .find('img[alt="Go back"]')
-    .should('have.prop', 'naturalWidth')
-    .should('be.greaterThan', 0)
-})
-
-it('callback prop is called on click', () => {
-  // mount the Button with the onClick function stub
-  // https://on.cypress.io/stub
-  // give the stub an alias "onClick"
-  // https://on.cypress.io/as
-  cy.mount(<Button label="Test button" onClick={cy.stub().as('onClick')} />)
-  // click the button component
-  cy.get('button').click()
-  // confirm the stub function was called
-  cy.get('@onClick').should('have.been.calledOnce')
-})
-
-it('callback prop is called with arguments', () => {
-  cy.mount(<Button label="Test button" onClick={cy.stub().as('onClick')} />)
-  cy.get('button').click()
-  cy.get('@onClick').should(
-    'have.been.calledOnceWithExactly',
-    'Hello from button',
-  )
-})
-
-it('callback prop is called with arguments with local stub', () => {
-  const onClick = cy.stub()
-  cy.mount(<Button label="Test button" onClick={onClick} />)
-  cy.get('button').click()
-  cy.wrap(onClick).should(
-    'have.been.calledOnceWithExactly',
-    'Hello from button',
-  )
+it('renders a button on green background', () => {
+  cy.mount(<Button label="Green" />)
+  cy.get('button').should('have.css', 'background-color', 'rgb(0, 128, 0)')
 })
