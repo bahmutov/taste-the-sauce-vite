@@ -20,11 +20,4 @@ test('renders the InputPrice component with custom formatter', async ({
   const customFormatter = (price) => `Price: ${price} cents`
   // mount the component with a custom format function above
   // follow the test above and check if the formatted price is displayed
-  const component = await mount(<InputPrice priceFormatter={customFormatter} />)
-  await expect(component.locator('.price')).not.toBeVisible()
-
-  await component.getByPlaceholder('Enter price (cents)').fill('9')
-  await expect(component.locator('.price')).toHaveText('Price: 9 cents')
-  await component.getByPlaceholder('Enter price (cents)').fill('99')
-  await expect(component.locator('.price')).toHaveText('Price: 99 cents')
 })

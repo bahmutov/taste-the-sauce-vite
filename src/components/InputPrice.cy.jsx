@@ -18,10 +18,4 @@ it('renders the InputPrice component with custom formatter', () => {
   const customFormatter = (price) => `Price: ${price} cents`
   // mount the component with a custom format function above
   // follow the test above and check if the formatted price is displayed
-  cy.mount(<InputPrice priceFormatter={customFormatter} />)
-  cy.get('.price').should('not.exist')
-  cy.get('[placeholder="Enter price (cents)"]').type('9')
-  cy.get('.price').should('be.visible').and('have.text', 'Price: 9 cents')
-  cy.get('[placeholder="Enter price (cents)"]').type('9')
-  cy.get('.price').should('have.text', 'Price: 99 cents')
 })
