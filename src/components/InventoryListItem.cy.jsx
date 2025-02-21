@@ -4,6 +4,13 @@ import { InventoryData } from '../utils/InventoryData'
 import { Route, BrowserRouter } from 'react-router-dom'
 
 describe('InventoryListItem', () => {
+  // shows the failure when we try mounting a component
+  // that expects to be inside a router
+  it.skip('tries to load one item', () => {
+    const item = InventoryData[3]
+    cy.mount(<InventoryListItem {...item} />)
+  })
+
   it('loads one item (with router)', () => {
     // take one of the items loaded from the inventory data list
     // and mount the "InventoryListItem" component
