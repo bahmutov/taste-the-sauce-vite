@@ -15,7 +15,10 @@ it('renders the InputPrice component', () => {
 })
 
 it('renders the InputPrice component with custom formatter', () => {
-  const customFormatter = (price) => `Price: ${price} cents`
+  const customFormatter = (price) => {
+    console.log('formatting', price)
+    return `Price: ${price} cents`
+  }
   // mount the component with a custom format function above
   // follow the test above and check if the formatted price is displayed
   cy.mount(<InputPrice priceFormatter={customFormatter} />)
