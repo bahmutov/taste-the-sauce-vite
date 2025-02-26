@@ -17,7 +17,10 @@ test('renders the InputPrice component', async ({ mount }) => {
 test('renders the InputPrice component with custom formatter', async ({
   mount,
 }) => {
-  const customFormatter = (price) => `Price: ${price} cents`
+  const customFormatter = (price) => {
+    console.log('formatting', price)
+    return `Price: ${price} cents`
+  }
   // mount the component with a custom format function above
   // follow the test above and check if the formatted price is displayed
   const component = await mount(<InputPrice priceFormatter={customFormatter} />)

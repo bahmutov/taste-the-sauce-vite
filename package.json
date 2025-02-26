@@ -62,7 +62,7 @@
     "names": "find-cypress-specs --names",
     "names:component": "find-cypress-specs --names --component",
     "badge:tests": "find-cypress-specs --test-counts --update-badge",
-    "test-ct": "playwright test -c playwright-ct.config.ts"
+    "test-ct": "playwright test -c playwright-ct.config.ts --ui"
   },
   "browserslist": {
     "production": [
