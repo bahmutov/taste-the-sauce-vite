@@ -1,329 +1,839 @@
 {
   "cypress/e2e/cart/add-to-cart.cy.ts": {
     "Cart / adds items to the cart": [
-      "/",
-      "/inventory"
+      {
+        "url": "/",
+        "duration": 1019,
+        "commandsCount": 19
+      },
+      {
+        "url": "/inventory",
+        "duration": 524,
+        "commandsCount": 46
+      }
     ]
   },
   "cypress/e2e/cart/cart-app-action.cy.ts": {
     "Cart / can be controlled via application methods": [
-      "/",
-      "/inventory",
-      "/cart"
+      {
+        "url": "/",
+        "duration": 875,
+        "commandsCount": 19
+      },
+      {
+        "url": "/inventory",
+        "duration": 315,
+        "commandsCount": 33
+      },
+      {
+        "url": "/cart",
+        "duration": 193,
+        "commandsCount": 6
+      }
     ]
   },
   "cypress/e2e/cart/cart.cy.ts": {
     "Cart / has id and quantity data- attributes": [
-      "/inventory",
-      "/cart"
+      {
+        "url": "/cart",
+        "duration": 137,
+        "commandsCount": 9
+      },
+      {
+        "url": "/inventory",
+        "duration": 125,
+        "commandsCount": 2
+      }
     ],
     "Cart / navigates to the item from the cart": [
-      "/inventory",
-      "/cart",
-      "/inventory-item?id=3"
+      {
+        "url": "/cart",
+        "duration": 194,
+        "commandsCount": 2
+      },
+      {
+        "url": "/inventory",
+        "duration": 133,
+        "commandsCount": 2
+      },
+      {
+        "url": "/inventory-item?id=:id",
+        "duration": 94,
+        "commandsCount": 6
+      }
     ],
     "Cart / shows the added items in order they were added": [
-      "/",
-      "/inventory",
-      "/cart"
+      {
+        "url": "/inventory",
+        "duration": 1652,
+        "commandsCount": 35
+      },
+      {
+        "url": "/",
+        "duration": 874,
+        "commandsCount": 19
+      },
+      {
+        "url": "/cart",
+        "duration": 111,
+        "commandsCount": 32
+      }
     ]
   },
   "cypress/e2e/cart/empty-cart.cy.ts": {
     "Empty cart / disables the Checkout button": [
-      "/",
-      "/inventory",
-      "/cart"
+      {
+        "url": "/",
+        "duration": 876,
+        "commandsCount": 19
+      },
+      {
+        "url": "/cart",
+        "duration": 175,
+        "commandsCount": 8
+      },
+      {
+        "url": "/inventory",
+        "duration": 123,
+        "commandsCount": 14
+      }
     ]
   },
   "cypress/e2e/cart/instant-cart.cy.ts": {
     "Cart / shows the cart items": [
-      "/",
-      "/inventory",
-      "/cart"
+      {
+        "url": "/",
+        "duration": 850,
+        "commandsCount": 19
+      },
+      {
+        "url": "/cart",
+        "duration": 180,
+        "commandsCount": 27
+      },
+      {
+        "url": "/inventory",
+        "duration": 130,
+        "commandsCount": 14
+      }
     ]
   },
   "cypress/e2e/cart/remove-from-cart.cy.ts": {
     "Cart / removes items from cart": [
-      "/",
-      "/inventory",
-      "/cart"
+      {
+        "url": "/",
+        "duration": 842,
+        "commandsCount": 19
+      },
+      {
+        "url": "/inventory",
+        "duration": 448,
+        "commandsCount": 24
+      },
+      {
+        "url": "/cart",
+        "duration": 201,
+        "commandsCount": 16
+      }
     ]
   },
   "cypress/e2e/checkout/checkout.cy.ts": {
     "Checkout / cancels checkout": [
-      "/",
-      "/inventory",
-      "/checkout-step-one",
-      "/cart"
+      {
+        "url": "/",
+        "duration": 849,
+        "commandsCount": 19
+      },
+      {
+        "url": "/inventory",
+        "duration": 124,
+        "commandsCount": 14
+      },
+      {
+        "url": "/checkout-step-one",
+        "duration": 122,
+        "commandsCount": 2
+      },
+      {
+        "url": "/cart",
+        "duration": 99,
+        "commandsCount": 6
+      }
     ],
     "Checkout / goes through the check out pages": [
-      "/cart",
-      "/checkout-step-one",
-      "/checkout-step-two",
-      "/checkout-complete",
-      "/inventory"
+      {
+        "url": "/checkout-step-one",
+        "duration": 627,
+        "commandsCount": 20
+      },
+      {
+        "url": "/cart",
+        "duration": 136,
+        "commandsCount": 3
+      },
+      {
+        "url": "/checkout-step-two",
+        "duration": 88,
+        "commandsCount": 4
+      },
+      {
+        "url": "/checkout-complete",
+        "duration": 87,
+        "commandsCount": 8
+      },
+      {
+        "url": "/inventory",
+        "duration": 87,
+        "commandsCount": 4
+      }
     ],
     "Checkout / requires all inputs": [
-      "/checkout-step-one",
-      "/checkout-step-two"
+      {
+        "url": "/checkout-step-one",
+        "duration": 899,
+        "commandsCount": 17
+      },
+      {
+        "url": "/checkout-step-two",
+        "duration": 96,
+        "commandsCount": 4
+      }
     ]
   },
   "cypress/e2e/checkout/glitch-user.cy.ts": {
     "works for performance glitch user": [
-      "/",
-      "/inventory",
-      "/checkout-step-one",
-      "/checkout-step-two",
-      "/checkout-complete"
+      {
+        "url": "/",
+        "duration": 5966,
+        "commandsCount": 19
+      },
+      {
+        "url": "/inventory",
+        "duration": 5333,
+        "commandsCount": 18
+      },
+      {
+        "url": "/checkout-step-one",
+        "duration": 664,
+        "commandsCount": 19
+      },
+      {
+        "url": "/checkout-complete",
+        "duration": 125,
+        "commandsCount": 7
+      },
+      {
+        "url": "/checkout-step-two",
+        "duration": 83,
+        "commandsCount": 5
+      }
     ]
   },
   "cypress/e2e/checkout/tax.cy.ts": {
     "Checkout / shows the tax within limits": [
-      "/",
-      "/inventory",
-      "/checkout-step-one",
-      "/checkout-step-two"
+      {
+        "url": "/",
+        "duration": 874,
+        "commandsCount": 19
+      },
+      {
+        "url": "/checkout-step-one",
+        "duration": 720,
+        "commandsCount": 21
+      },
+      {
+        "url": "/checkout-step-two",
+        "duration": 130,
+        "commandsCount": 14
+      },
+      {
+        "url": "/inventory",
+        "duration": 127,
+        "commandsCount": 14
+      }
     ]
   },
   "cypress/e2e/checkout/total.cy.ts": {
     "Checkout / can purchase two bike lights": [
-      "/inventory",
-      "/cart",
-      "/checkout-step-one",
-      "/checkout-step-two"
+      {
+        "url": "/checkout-step-one",
+        "duration": 620,
+        "commandsCount": 19
+      },
+      {
+        "url": "/cart",
+        "duration": 237,
+        "commandsCount": 6
+      },
+      {
+        "url": "/inventory",
+        "duration": 207,
+        "commandsCount": 6
+      },
+      {
+        "url": "/checkout-step-two",
+        "duration": 97,
+        "commandsCount": 7
+      }
     ],
     "Checkout / shows the right total price": [
-      "/",
-      "/inventory",
-      "/checkout-step-one",
-      "/checkout-step-two"
+      {
+        "url": "/",
+        "duration": 848,
+        "commandsCount": 19
+      },
+      {
+        "url": "/checkout-step-one",
+        "duration": 685,
+        "commandsCount": 19
+      },
+      {
+        "url": "/checkout-step-two",
+        "duration": 129,
+        "commandsCount": 8
+      },
+      {
+        "url": "/inventory",
+        "duration": 122,
+        "commandsCount": 14
+      }
     ]
   },
   "cypress/e2e/inventory/images-load.cy.ts": {
     "Regular user / loads every image": [
-      "/",
-      "/inventory"
+      {
+        "url": "/",
+        "duration": 857,
+        "commandsCount": 19
+      },
+      {
+        "url": "/inventory",
+        "duration": 285,
+        "commandsCount": 21
+      }
     ]
   },
   "cypress/e2e/inventory/images.cy.ts": {
     "Regular user / loads every image": [
-      "/inventory"
+      {
+        "url": "/inventory",
+        "duration": 136,
+        "commandsCount": 5
+      }
     ],
     "Regular user / sees unique thumbnail images": [
-      "/",
-      "/inventory"
+      {
+        "url": "/",
+        "duration": 864,
+        "commandsCount": 19
+      },
+      {
+        "url": "/inventory",
+        "duration": 316,
+        "commandsCount": 20
+      }
     ]
   },
   "cypress/e2e/inventory/inventory.cy.ts": {
     "Inventory / has every item from the inventory": [
-      "/",
-      "/inventory"
+      {
+        "url": "/",
+        "duration": 823,
+        "commandsCount": 9
+      },
+      {
+        "url": "/inventory",
+        "duration": 245,
+        "commandsCount": 54
+      }
     ]
   },
   "cypress/e2e/inventory/item.cy.js": {
     "Inventory / has an item with details": [
-      "/",
-      "/inventory"
+      {
+        "url": "/",
+        "duration": 833,
+        "commandsCount": 9
+      },
+      {
+        "url": "/inventory",
+        "duration": 133,
+        "commandsCount": 13
+      }
     ]
   },
   "cypress/e2e/inventory/item2.cy.js": {
     "Inventory / has an item with details": [
-      "/",
-      "/inventory"
+      {
+        "url": "/",
+        "duration": 824,
+        "commandsCount": 9
+      },
+      {
+        "url": "/inventory",
+        "duration": 133,
+        "commandsCount": 13
+      }
     ]
   },
   "cypress/e2e/inventory/item3.cy.js": {
     "Inventory / has an item with details": [
-      "/",
-      "/inventory"
+      {
+        "url": "/",
+        "duration": 833,
+        "commandsCount": 9
+      },
+      {
+        "url": "/inventory",
+        "duration": 136,
+        "commandsCount": 11
+      }
     ]
-  },
-  "cypress/e2e/inventory/no-isolation.cy.js": {
-    "sort without test isolation / by name from A to Z": [],
-    "sort without test isolation / by name from Z to A": [],
-    "sort without test isolation / by price highest to highest": [],
-    "sort without test isolation / by price lowest to highest": []
   },
   "cypress/e2e/inventory/product-ids.cy.ts": {
     "Products / have unique ids": [
-      "/",
-      "/inventory"
+      {
+        "url": "/",
+        "duration": 842,
+        "commandsCount": 19
+      },
+      {
+        "url": "/inventory",
+        "duration": 271,
+        "commandsCount": 22
+      }
     ]
   },
   "cypress/e2e/inventory/product.cy.ts": {
     "Product / navigates by clicking the thumbnail image": [
-      "/inventory",
-      "/inventory-item?id=5"
+      {
+        "url": "/inventory",
+        "duration": 224,
+        "commandsCount": 8
+      },
+      {
+        "url": "/inventory-item?id=:id",
+        "duration": 81,
+        "commandsCount": 4
+      }
     ],
     "Product / shows item not found": [
-      "/inventory",
-      "/inventory-item?id=10001"
+      {
+        "url": "/inventory-item?id=:id",
+        "duration": 146,
+        "commandsCount": 6
+      },
+      {
+        "url": "/inventory",
+        "duration": 137,
+        "commandsCount": 2
+      }
     ],
     "Product / shows the item": [
-      "/",
-      "/inventory",
-      "/inventory-item?id=5"
+      {
+        "url": "/",
+        "duration": 833,
+        "commandsCount": 19
+      },
+      {
+        "url": "/inventory",
+        "duration": 361,
+        "commandsCount": 25
+      },
+      {
+        "url": "/inventory-item?id=:id",
+        "duration": 83,
+        "commandsCount": 11
+      }
     ]
   },
   "cypress/e2e/inventory/sort-tests-session.cy.js": {
     "sorting session / by name from A to Z": [
-      "/inventory"
+      {
+        "url": "/inventory",
+        "duration": 265,
+        "commandsCount": 10
+      }
     ],
     "sorting session / by name from Z to A": [
-      "/inventory"
+      {
+        "url": "/inventory",
+        "duration": 269,
+        "commandsCount": 10
+      }
     ],
     "sorting session / by price highest to highest": [
-      "/inventory"
+      {
+        "url": "/inventory",
+        "duration": 272,
+        "commandsCount": 12
+      }
     ],
     "sorting session / by price lowest to highest": [
-      "/",
-      "/inventory"
+      {
+        "url": "/",
+        "duration": 925,
+        "commandsCount": 9
+      },
+      {
+        "url": "/inventory",
+        "duration": 432,
+        "commandsCount": 21
+      }
     ]
   },
   "cypress/e2e/inventory/sort-tests.cy.ts": {
     "sorting tests / by name from A to Z": [
-      "/inventory"
+      {
+        "url": "/inventory",
+        "duration": 263,
+        "commandsCount": 17
+      }
     ],
     "sorting tests / by name from Z to A": [
-      "/inventory"
+      {
+        "url": "/inventory",
+        "duration": 301,
+        "commandsCount": 17
+      }
     ],
     "sorting tests / by price highest to highest": [
-      "/inventory"
+      {
+        "url": "/inventory",
+        "duration": 271,
+        "commandsCount": 19
+      }
     ],
     "sorting tests / by price lowest to highest": [
-      "/",
-      "/inventory"
+      {
+        "url": "/",
+        "duration": 831,
+        "commandsCount": 9
+      },
+      {
+        "url": "/inventory",
+        "duration": 256,
+        "commandsCount": 19
+      }
     ],
     "sorting tests / does nothing for invalid sort options": [
-      "/inventory"
+      {
+        "url": "/inventory",
+        "duration": 281,
+        "commandsCount": 18
+      }
     ]
   },
   "cypress/e2e/inventory/sorted.cy.js": {
     "sorted / by price": [
-      "/",
-      "/inventory"
+      {
+        "url": "/",
+        "duration": 825,
+        "commandsCount": 9
+      },
+      {
+        "url": "/inventory",
+        "duration": 248,
+        "commandsCount": 10
+      }
     ]
   },
   "cypress/e2e/inventory/stub-image-load.cy.ts": {
     "Product / shows a broken thumbnail": [
-      "/",
-      "/inventory",
-      "/inventory-item?id=1"
+      {
+        "url": "/",
+        "duration": 828,
+        "commandsCount": 19
+      },
+      {
+        "url": "/inventory-item?id=:id",
+        "duration": 175,
+        "commandsCount": 9
+      },
+      {
+        "url": "/inventory",
+        "duration": 131,
+        "commandsCount": 16
+      }
     ]
   },
   "cypress/e2e/login/call-login.cy.js": {
     "logs in": [
-      "/",
-      "/inventory"
+      {
+        "url": "/",
+        "duration": 119,
+        "commandsCount": 9
+      },
+      {
+        "url": "/inventory",
+        "duration": 73,
+        "commandsCount": 4
+      }
     ],
     "logs in by typing": [
-      "/",
-      "/inventory"
+      {
+        "url": "/",
+        "duration": 818,
+        "commandsCount": 9
+      },
+      {
+        "url": "/inventory",
+        "duration": 134,
+        "commandsCount": 4
+      }
     ]
   },
   "cypress/e2e/login/direct-attempt.cy.ts": {
     "anonymous user / gets an error trying to visit the inventory page": [
-      "/inventory",
-      "/"
+      {
+        "url": "/inventory",
+        "duration": 190,
+        "commandsCount": 0
+      },
+      {
+        "url": "/",
+        "duration": 66,
+        "commandsCount": 8
+      }
     ]
   },
   "cypress/e2e/login/invalid.cy.ts": {
     "Invalid user information / wrong password": [
-      "/"
+      {
+        "url": "/",
+        "duration": 1022,
+        "commandsCount": 14
+      }
     ],
     "Invalid user information / wrong username and password": [
-      "/"
+      {
+        "url": "/",
+        "duration": 846,
+        "commandsCount": 14
+      }
     ]
   },
   "cypress/e2e/login/locked-out-user.cy.ts": {
     "Locked out user / shows a login error": [
-      "/"
+      {
+        "url": "/",
+        "duration": 2096,
+        "commandsCount": 34
+      }
     ],
     "Locked out user / shows a login error refactored": [
-      "/"
+      {
+        "url": "/",
+        "duration": 1928,
+        "commandsCount": 31
+      }
     ]
   },
   "cypress/e2e/login/login-for-sort.cy.ts": {
     "sorting / by name from A to Z": [
-      "/inventory"
+      {
+        "url": "/inventory",
+        "duration": 262,
+        "commandsCount": 10
+      }
     ],
     "sorting / by name from Z to A": [
-      "/inventory"
+      {
+        "url": "/inventory",
+        "duration": 273,
+        "commandsCount": 10
+      }
     ],
     "sorting / by price highest to highest": [
-      "/inventory"
+      {
+        "url": "/inventory",
+        "duration": 271,
+        "commandsCount": 12
+      }
     ],
     "sorting / by price lowest to highest": [
-      "/",
-      "/inventory"
+      {
+        "url": "/",
+        "duration": 824,
+        "commandsCount": 9
+      },
+      {
+        "url": "/inventory",
+        "duration": 257,
+        "commandsCount": 16
+      }
     ]
   },
   "cypress/e2e/login/login-form.cy.ts": {
     "Login form / shows an error for empty password field": [
-      "/"
+      {
+        "url": "/",
+        "duration": 393,
+        "commandsCount": 11
+      }
     ],
     "Login form / shows an error for empty username field": [
-      "/"
+      {
+        "url": "/",
+        "duration": 314,
+        "commandsCount": 9
+      }
     ]
   },
   "cypress/e2e/login/logout.cy.ts": {
     "logs out": [
-      "/",
-      "/inventory"
+      {
+        "url": "/",
+        "duration": 1007,
+        "commandsCount": 29
+      },
+      {
+        "url": "/inventory",
+        "duration": 712,
+        "commandsCount": 20
+      }
     ]
   },
   "cypress/e2e/misc/gtm-datalayer.cy.ts": {
     "dataLayer / pushes cart events": [
-      "/",
-      "/inventory"
+      {
+        "url": "/",
+        "duration": 832,
+        "commandsCount": 19
+      },
+      {
+        "url": "/inventory",
+        "duration": 370,
+        "commandsCount": 30
+      }
     ]
   },
   "cypress/e2e/misc/menu.cy.ts": {
     "Menu / resets the shopping cart": [
-      "/inventory",
-      "/cart"
+      {
+        "url": "/cart",
+        "duration": 815,
+        "commandsCount": 16
+      },
+      {
+        "url": "/inventory",
+        "duration": 127,
+        "commandsCount": 5
+      }
     ],
     "Menu / shows all items": [
-      "/",
-      "/inventory",
-      "/cart"
+      {
+        "url": "/",
+        "duration": 857,
+        "commandsCount": 19
+      },
+      {
+        "url": "/cart",
+        "duration": 710,
+        "commandsCount": 7
+      },
+      {
+        "url": "/inventory",
+        "duration": 369,
+        "commandsCount": 27
+      }
     ]
   },
   "cypress/e2e/problem-user/checkout-step-two.cy.ts": {
     "Problem user / computes the incorrect order total": [
-      "/",
-      "/inventory",
-      "/checkout-step-two",
-      "/checkout-complete"
+      {
+        "url": "/",
+        "duration": 824,
+        "commandsCount": 19
+      },
+      {
+        "url": "/inventory",
+        "duration": 577,
+        "commandsCount": 27
+      },
+      {
+        "url": "/checkout-step-two",
+        "duration": 127,
+        "commandsCount": 7
+      },
+      {
+        "url": "/checkout-complete",
+        "duration": 118,
+        "commandsCount": 10
+      }
     ],
     "Problem user / goes to the inventory page on cancel": [
-      "/inventory",
-      "/checkout-step-two"
+      {
+        "url": "/inventory",
+        "duration": 211,
+        "commandsCount": 6
+      },
+      {
+        "url": "/checkout-step-two",
+        "duration": 117,
+        "commandsCount": 2
+      }
     ]
   },
   "cypress/e2e/problem-user/checkout.cy.ts": {
     "Problem user / mishandles the user information form": [
-      "/",
-      "/inventory",
-      "/checkout-step-one"
+      {
+        "url": "/checkout-step-one",
+        "duration": 910,
+        "commandsCount": 20
+      },
+      {
+        "url": "/",
+        "duration": 839,
+        "commandsCount": 19
+      },
+      {
+        "url": "/inventory",
+        "duration": 282,
+        "commandsCount": 18
+      }
     ]
   },
   "cypress/e2e/problem-user/inventory-images.cy.ts": {
     "Problem user / shows 404 thumbnail images": [
-      "/",
-      "/inventory"
+      {
+        "url": "/",
+        "duration": 833,
+        "commandsCount": 19
+      },
+      {
+        "url": "/inventory",
+        "duration": 240,
+        "commandsCount": 20
+      }
     ]
   },
   "cypress/e2e/problem-user/remove-from-cart.cy.ts": {
     "Problem user / does not remove even items from the cart": [
-      "/",
-      "/inventory"
+      {
+        "url": "/",
+        "duration": 820,
+        "commandsCount": 19
+      },
+      {
+        "url": "/inventory",
+        "duration": 407,
+        "commandsCount": 33
+      }
     ]
   },
   "cypress/e2e/problem-user/sort.cy.ts": {
     "Problem user / cannot sort": [
-      "/",
-      "/inventory"
+      {
+        "url": "/",
+        "duration": 840,
+        "commandsCount": 19
+      },
+      {
+        "url": "/inventory",
+        "duration": 375,
+        "commandsCount": 30
+      }
     ]
   }
 }
