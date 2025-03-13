@@ -1,6 +1,9 @@
 // first import the 3rd party Cypress plugins
 // to make them available in every command
 
+// https://www.npmjs.com/package/cypress-plugin-steps
+import 'cypress-plugin-steps'
+
 // https://github.com/bahmutov/cypress-code-coverage
 import '@bahmutov/cypress-code-coverage/support'
 

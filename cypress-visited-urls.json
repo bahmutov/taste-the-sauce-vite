@@ -140,50 +140,40 @@
   "cypress/e2e/checkout/checkout.cy.ts": {
     "Checkout / cancels checkout": [
       {
-        "url": "/",
-        "duration": 849,
-        "commandsCount": 19
-      },
-      {
-        "url": "/inventory",
-        "duration": 124,
-        "commandsCount": 14
-      },
-      {
         "url": "/checkout-step-one",
-        "duration": 122,
+        "duration": 182,
         "commandsCount": 2
       },
       {
         "url": "/cart",
-        "duration": 99,
-        "commandsCount": 6
+        "duration": 85,
+        "commandsCount": 5
       }
     ],
     "Checkout / goes through the check out pages": [
       {
         "url": "/checkout-step-one",
-        "duration": 627,
-        "commandsCount": 20
+        "duration": 649,
+        "commandsCount": 22
       },
       {
         "url": "/cart",
-        "duration": 136,
+        "duration": 165,
         "commandsCount": 3
       },
       {
-        "url": "/checkout-step-two",
-        "duration": 88,
-        "commandsCount": 4
+        "url": "/checkout-complete",
+        "duration": 93,
+        "commandsCount": 9
       },
       {
-        "url": "/checkout-complete",
-        "duration": 87,
-        "commandsCount": 8
+        "url": "/checkout-step-two",
+        "duration": 92,
+        "commandsCount": 5
       },
       {
         "url": "/inventory",
-        "duration": 87,
+        "duration": 92,
         "commandsCount": 4
       }
     ],

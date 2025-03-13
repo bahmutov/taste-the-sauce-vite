@@ -55,6 +55,8 @@ describe('Checkout', { viewportHeight: 1200 }, () => {
     // set the ids in the local storage item "cart-contents"
     // Tip: local storage usually has stringified data
     window.localStorage.setItem('cart-contents', JSON.stringify(ids))
+
+    cy.section('Cart').step('visit the cart page')
     // visit the cart page
     // https://on.cypress.io/visit
     cy.visit('/cart')
@@ -63,11 +65,15 @@ describe('Checkout', { viewportHeight: 1200 }, () => {
     cy.get('.cart_list .cart_item').should('have.length', InventoryData.length)
     // click on the Checkout button
     cy.contains('button', 'Checkout').click()
+
+    cy.section('Checkout Step One')
     // we should be on the checkout step one page
     // https://on.cypress.io/location
     cy.location('pathname').should('equal', '/checkout-step-one')
     // fill the check out form with values "Joe Smith 90210"
     CheckoutPage.fillInformationForm().submit()
+
+    cy.step('confirm the checkout')
     // we should be on the checkout step two page
     cy.location('pathname').should('equal', '/checkout-step-two')
     // the summary page shows the expected number of cart items
@@ -79,6 +85,7 @@ describe('Checkout', { viewportHeight: 1200 }, () => {
     cy.contains('[data-test=finish]', 'Finish').click()
     // we should be on the checkout complete page
     cy.location('pathname').should('equal', '/checkout-complete')
+    cy.step('confirmation')
     // it shows the checkout complete component
     cy.get('#checkout_complete_container').should('be.visible')
     // the application should have cleared the local storage item "cart-contents"
@@ -88,7 +95,7 @@ describe('Checkout', { viewportHeight: 1200 }, () => {
       .invoke('getItem', 'cart-contents')
       .should('not.exist')
 
-    cy.log('**Back Home goes to the inventory page**')
+    cy.step('**Back Home goes to the inventory page**')
     cy.contains('button', 'Back Home').click()
     cy.location('pathname').should('equal', '/inventory')
   })

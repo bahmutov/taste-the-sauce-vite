@@ -4,6 +4,7 @@
     "types": [
       "cypress",
       "cypress-map",
+      "cypress-plugin-steps",
       "vite/client",
       "vite-plugin-svgr/client"
     ],

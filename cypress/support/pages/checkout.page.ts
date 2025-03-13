@@ -24,6 +24,7 @@ export const CheckoutPage = {
     lastName = 'Smith',
     zipCode = '90210',
   ) {
+    cy.step('fill the information form')
     // make sure to return the command chain
     // to allow chaining more assertions and commands
     return cy.get('.checkout_info_wrapper form').fillForm({

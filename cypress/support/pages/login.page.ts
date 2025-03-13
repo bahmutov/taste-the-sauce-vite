@@ -36,6 +36,8 @@ export const LoginPage = {
    * @param password
    */
   login(username: string, password: string) {
+    cy.section(`login as ${username}`)
+
     // https://on.cypress.io/session
     cy.session(
       `user ${username} login`,
