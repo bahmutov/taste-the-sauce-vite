@@ -83,19 +83,9 @@
   "cypress/e2e/cart/empty-cart.cy.ts": {
     "Empty cart / disables the Checkout button": [
       {
-        "url": "/",
-        "duration": 876,
-        "commandsCount": 19
-      },
-      {
         "url": "/cart",
-        "duration": 175,
-        "commandsCount": 8
-      },
-      {
-        "url": "/inventory",
-        "duration": 123,
-        "commandsCount": 14
+        "duration": 149,
+        "commandsCount": 7
       }
     ]
   },
@@ -121,19 +111,14 @@
   "cypress/e2e/cart/remove-from-cart.cy.ts": {
     "Cart / removes items from cart": [
       {
-        "url": "/",
-        "duration": 842,
-        "commandsCount": 19
-      },
-      {
         "url": "/inventory",
-        "duration": 448,
-        "commandsCount": 24
+        "duration": 342,
+        "commandsCount": 10
       },
       {
         "url": "/cart",
-        "duration": 201,
-        "commandsCount": 16
+        "duration": 203,
+        "commandsCount": 15
       }
     ]
   },
@@ -141,39 +126,39 @@
     "Checkout / cancels checkout": [
       {
         "url": "/checkout-step-one",
-        "duration": 182,
+        "duration": 157,
         "commandsCount": 2
       },
       {
         "url": "/cart",
-        "duration": 85,
+        "duration": 128,
         "commandsCount": 5
       }
     ],
     "Checkout / goes through the check out pages": [
       {
         "url": "/checkout-step-one",
-        "duration": 649,
-        "commandsCount": 22
+        "duration": 648,
+        "commandsCount": 20
       },
       {
         "url": "/cart",
-        "duration": 165,
+        "duration": 123,
         "commandsCount": 3
       },
       {
+        "url": "/inventory",
+        "duration": 98,
+        "commandsCount": 4
+      },
+      {
         "url": "/checkout-complete",
-        "duration": 93,
-        "commandsCount": 9
+        "duration": 92,
+        "commandsCount": 8
       },
       {
         "url": "/checkout-step-two",
-        "duration": 92,
-        "commandsCount": 5
-      },
-      {
-        "url": "/inventory",
-        "duration": 92,
+        "duration": 91,
         "commandsCount": 4
       }
     ],
@@ -222,23 +207,23 @@
   "cypress/e2e/checkout/tax.cy.ts": {
     "Checkout / shows the tax within limits": [
       {
-        "url": "/",
-        "duration": 874,
-        "commandsCount": 19
-      },
-      {
         "url": "/checkout-step-one",
-        "duration": 720,
+        "duration": 747,
         "commandsCount": 21
       },
       {
+        "url": "/",
+        "duration": 711,
+        "commandsCount": 19
+      },
+      {
         "url": "/checkout-step-two",
-        "duration": 130,
+        "duration": 129,
         "commandsCount": 14
       },
       {
         "url": "/inventory",
-        "duration": 127,
+        "duration": 122,
         "commandsCount": 14
       }
     ]
@@ -269,23 +254,23 @@
     "Checkout / shows the right total price": [
       {
         "url": "/",
-        "duration": 848,
+        "duration": 718,
         "commandsCount": 19
       },
       {
         "url": "/checkout-step-one",
-        "duration": 685,
+        "duration": 697,
         "commandsCount": 19
       },
       {
-        "url": "/checkout-step-two",
-        "duration": 129,
-        "commandsCount": 8
+        "url": "/inventory",
+        "duration": 135,
+        "commandsCount": 14
       },
       {
-        "url": "/inventory",
-        "duration": 122,
-        "commandsCount": 14
+        "url": "/checkout-step-two",
+        "duration": 117,
+        "commandsCount": 8
       }
     ]
   },
