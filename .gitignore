@@ -29,3 +29,4 @@ storybook-static
 .tmp
 .eslintcache
 cypress/videos/
+test-summaries.md
