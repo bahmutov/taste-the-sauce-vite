@@ -38,8 +38,10 @@ describe('dataLayer', () => {
       })
     // add the item "Sauce Labs Onesie" to the cart
     InventoryPage.addItemToCart('Sauce Labs Onesie')
-    // confirm the dataLayer.push method was called twice
-    cy.get('@push').should('have.been.calledTwice')
+    // confirm the dataLayer.push method was called
+    // Note: this layer is called by our application code
+    // and by the installed google tag manager script
+    cy.get('@push').should('have.been.called')
     // confirm the dataLayer.push method was called with
     // { event: 'addToCart' }
     // Tip: you need to check calls using your custom Sinon match predicate

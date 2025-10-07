@@ -688,12 +688,12 @@
     "dataLayer / pushes cart events": [
       {
         "url": "/",
-        "duration": 832,
+        "duration": 1653,
         "commandsCount": 19
       },
       {
         "url": "/inventory",
-        "duration": 370,
+        "duration": 433,
         "commandsCount": 30
       }
     ]
