@@ -33,5 +33,10 @@ describe('Login form', () => {
     // using the "wick-a11y" plugin
     // https://github.com/sclavijosuero/wick-a11y
     cy.checkAccessibility()
+    // confirm the a11y check is working by making the form
+    // less accessible, for example by removing the placeholder attribute
+    // on one of the input fields
+    // 1. inspect the error message in the failed tests
+    // 2. inspect the generated HTML report
   })
 })
