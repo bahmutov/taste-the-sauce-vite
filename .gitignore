@@ -32,3 +32,4 @@ cypress/videos/
 playwright-report/
 playwright
 test-results/
+cypress/accessibility/

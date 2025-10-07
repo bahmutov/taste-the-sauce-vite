@@ -25,4 +25,13 @@ describe('Login form', () => {
     // with text "Epic sadface: Password is required"
     LoginPage.showsError('Epic sadface: Password is required')
   })
+
+  it('is accessible', () => {
+    // confirm the login form is visible
+    cy.get(LoginPage.selectors.form).should('be.visible')
+    // and check the accessibility of the entire page
+    // using the "wick-a11y" plugin
+    // https://github.com/sclavijosuero/wick-a11y
+    cy.checkAccessibility()
+  })
 })

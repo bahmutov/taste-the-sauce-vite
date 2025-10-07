@@ -655,6 +655,13 @@
     ]
   },
   "cypress/e2e/login/login-form.cy.ts": {
+    "Login form / is accessible": [
+      {
+        "url": "/",
+        "duration": 267,
+        "commandsCount": 15
+      }
+    ],
     "Login form / shows an error for empty password field": [
       {
         "url": "/",
