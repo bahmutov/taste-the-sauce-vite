@@ -12,6 +12,9 @@ import 'cypress-data-session'
 // https://github.com/bahmutov/cypress-map
 import 'cypress-map'
 
+// https://github.com/sclavijosuero/wick-a11y
+import 'wick-a11y'
+
 // https://www.chaijs.com/plugins/chai-sorted/
 // @ts-ignore
 chai.use(require('chai-sorted'))

@@ -13,6 +13,8 @@ import codeCoveragePlugin from '@bahmutov/cypress-code-coverage/plugin'
 import IstanbulPlugin from 'vite-plugin-istanbul'
 // https://github.com/bahmutov/cypress-visited-urls
 import visitedUrlsPlugin from 'cypress-visited-urls/src/plugin'
+// https://github.com/sclavijosuero/wick-a11y
+import addAccessibilityTasks from 'wick-a11y/accessibility-tasks'
 
 const __dirname = import.meta.dirname
 
@@ -66,6 +68,7 @@ export default defineConfig({
       reloadWatch(on, config)
       codeCoveragePlugin(on, config)
       visitedUrlsPlugin(on, config)
+      addAccessibilityTasks(on, config)
       // IMPORTANT to return the config object
       // with the any changed environment variables
       return config
