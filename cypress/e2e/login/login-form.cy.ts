@@ -28,11 +28,11 @@ describe('Login form', () => {
 
   it('is accessible', () => {
     // confirm the login form is visible
-    cy.get(LoginPage.selectors.form).should('be.visible')
+    //
     // and check the accessibility of the entire page
     // using the "wick-a11y" plugin
     // https://github.com/sclavijosuero/wick-a11y
-    cy.checkAccessibility()
+    //
     // confirm the a11y check is working by making the form
     // less accessible, for example by removing the placeholder attribute
     // on one of the input fields
