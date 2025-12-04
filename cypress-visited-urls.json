@@ -35,31 +35,31 @@
   "cypress/e2e/cart/cart.cy.ts": {
     "Cart / has id and quantity data- attributes": [
       {
-        "url": "/cart",
-        "duration": 137,
-        "commandsCount": 9
+        "url": "/inventory",
+        "duration": 129,
+        "commandsCount": 2
       },
       {
-        "url": "/inventory",
-        "duration": 125,
-        "commandsCount": 2
+        "url": "/cart",
+        "duration": 121,
+        "commandsCount": 9
       }
     ],
     "Cart / navigates to the item from the cart": [
       {
-        "url": "/cart",
-        "duration": 194,
-        "commandsCount": 2
-      },
-      {
         "url": "/inventory",
-        "duration": 133,
+        "duration": 138,
         "commandsCount": 2
       },
       {
         "url": "/inventory-item?id=:id",
-        "duration": 94,
+        "duration": 124,
         "commandsCount": 6
+      },
+      {
+        "url": "/cart",
+        "duration": 122,
+        "commandsCount": 2
       }
     ],
     "Cart / shows the added items in order they were added": [
@@ -140,41 +140,51 @@
   "cypress/e2e/checkout/checkout.cy.ts": {
     "Checkout / cancels checkout": [
       {
+        "url": "/",
+        "duration": 842,
+        "commandsCount": 19
+      },
+      {
         "url": "/checkout-step-one",
-        "duration": 182,
+        "duration": 119,
         "commandsCount": 2
       },
       {
         "url": "/cart",
-        "duration": 85,
-        "commandsCount": 5
+        "duration": 113,
+        "commandsCount": 6
+      },
+      {
+        "url": "/inventory",
+        "duration": 104,
+        "commandsCount": 14
       }
     ],
     "Checkout / goes through the check out pages": [
       {
         "url": "/checkout-step-one",
-        "duration": 649,
+        "duration": 627,
         "commandsCount": 22
       },
       {
         "url": "/cart",
-        "duration": 165,
+        "duration": 118,
         "commandsCount": 3
       },
       {
         "url": "/checkout-complete",
-        "duration": 93,
+        "duration": 105,
         "commandsCount": 9
       },
       {
-        "url": "/checkout-step-two",
-        "duration": 92,
-        "commandsCount": 5
+        "url": "/inventory",
+        "duration": 104,
+        "commandsCount": 4
       },
       {
-        "url": "/inventory",
-        "duration": 92,
-        "commandsCount": 4
+        "url": "/checkout-step-two",
+        "duration": 103,
+        "commandsCount": 5
       }
     ],
     "Checkout / requires all inputs": [
@@ -223,22 +233,22 @@
     "Checkout / shows the tax within limits": [
       {
         "url": "/",
-        "duration": 874,
+        "duration": 1508,
         "commandsCount": 19
       },
       {
         "url": "/checkout-step-one",
-        "duration": 720,
-        "commandsCount": 21
+        "duration": 653,
+        "commandsCount": 22
       },
       {
         "url": "/checkout-step-two",
-        "duration": 130,
+        "duration": 147,
         "commandsCount": 14
       },
       {
         "url": "/inventory",
-        "duration": 127,
+        "duration": 112,
         "commandsCount": 14
       }
     ]
@@ -314,12 +324,12 @@
     "Regular user / sees unique thumbnail images": [
       {
         "url": "/",
-        "duration": 864,
+        "duration": 1559,
         "commandsCount": 19
       },
       {
         "url": "/inventory",
-        "duration": 316,
+        "duration": 275,
         "commandsCount": 20
       }
     ]
@@ -733,6 +743,15 @@
         "url": "/inventory",
         "duration": 369,
         "commandsCount": 27
+      }
+    ]
+  },
+  "cypress/e2e/misc/wait-ms.cy.ts": {
+    "Waiting with branded types / waits using seconds and ms": [
+      {
+        "url": "/",
+        "duration": 2657,
+        "commandsCount": 5
       }
     ]
   },

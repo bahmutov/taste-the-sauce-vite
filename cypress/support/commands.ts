@@ -25,3 +25,8 @@ Cypress.Commands.add('getByTest', (testId) => {
   // query the elements by the "data-test=..." attribute
   cy.get(`[data-test="${testId}"]`)
 })
+
+Cypress.Commands.add('delay', (period: number) => {
+  const log = Cypress.log({ name: 'delay', message: period })
+  return cy.wait(period, { log: false })
+})

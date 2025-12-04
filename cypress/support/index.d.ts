@@ -18,6 +18,8 @@ declare namespace Cypress {
      *  getByTest('checkout').should('be.visible')
      */
     getByTest(testId: string): Chainable<JQuery<HTMLElement>>
+
+    delay(period: number): Chainable<undefined>
   }
 
   interface Cypress {
