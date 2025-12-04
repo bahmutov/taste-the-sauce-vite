@@ -1,6 +1,6 @@
 import { LoginPage } from '@support/pages/login.page'
 import { InventoryPage } from '@support/pages/inventory.page'
-import { LoginInfo, ms } from '..'
+import { LoginInfo } from '..'
 
 describe('Menu', () => {
   // create a small type on the fly using jsdoc comment
@@ -30,7 +30,7 @@ describe('Menu', () => {
     cy.contains('button', 'Open Menu')
       .click()
       // add short wait to make this step noticeable in the video
-      .wait(ms(500))
+      .wait(500)
     cy.contains('a', 'All Items').click()
 
     cy.location('pathname').should('equal', '/inventory')
@@ -45,7 +45,7 @@ describe('Menu', () => {
     cy.visit('/cart')
     InventoryPage.getCartBadge().should('have.text', 1)
 
-    cy.contains('button', 'Open Menu').click().wait(ms(500))
+    cy.contains('button', 'Open Menu').click().wait(500)
     cy.contains('a', 'Reset App State').click()
 
     InventoryPage.getCartBadge().should('not.exist')
@@ -59,7 +59,7 @@ describe('Menu', () => {
 
   // going to another domain is always flaky :(
   it.skip('goes to the About page', () => {
-    cy.contains('button', 'Open Menu').click().wait(ms(500))
+    cy.contains('button', 'Open Menu').click().wait(500)
 
     // can we hide all requests that are NOT to saucelabs.com?
     cy.intercept({ hostname: 'cdn.contentful.com' }, { log: false })

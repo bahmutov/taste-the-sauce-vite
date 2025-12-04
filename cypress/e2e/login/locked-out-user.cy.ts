@@ -1,4 +1,4 @@
-import { LoginInfo, seconds } from '..'
+import { LoginInfo } from '..'
 import { LoginPage } from '@support/pages/login.page'
 
 describe('Locked out user', () => {
@@ -34,7 +34,7 @@ describe('Locked out user', () => {
     cy.contains('[data-test=error]', 'locked out')
       .should('be.visible')
       // wait 1 second for clarity
-      .wait(seconds(1))
+      .wait(1000)
       .find('button.error-button')
       .click()
     // confirm the errors go away, but the input fields are not cleared
@@ -72,7 +72,7 @@ describe('Locked out user', () => {
       .should('include.text', 'locked out')
       .and('be.visible')
       // wait 1 second for clarity
-      .wait(seconds(1))
+      .wait(1000)
       .find('button.error-button')
       .click()
     // confirm the errors go away, but the input fields are not cleared

@@ -1,5 +1,15 @@
 /// <reference types="cypress" />
 
+// time durations branded types
+// https://www.learningtypescript.com/articles/branded-types
+// https://blog.theodorc.no/posts/branded-types/
+// used to represent seconds and milliseconds
+// and make it CLEAR which units we are using
+// See cypress/e2e/index.ts for conversion functions
+type Period<T extends 'ms' | 'seconds'> = number & { __brand: T }
+type Milliseconds = Period<'ms'>
+type Seconds = Period<'seconds'>
+
 declare namespace Cypress {
   interface Chainable {
     /**
@@ -19,7 +29,10 @@ declare namespace Cypress {
      */
     getByTest(testId: string): Chainable<JQuery<HTMLElement>>
 
-    delay(period: number): Chainable<undefined>
+    /**
+     * Equivalent to cy.wait(ms) but with explicit branded type for milliseconds.
+     */
+    delay(period: Milliseconds): Chainable<undefined>
   }
 
   interface Cypress {

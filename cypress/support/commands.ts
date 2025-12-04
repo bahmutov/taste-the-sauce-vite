@@ -26,7 +26,13 @@ Cypress.Commands.add('getByTest', (testId) => {
   cy.get(`[data-test="${testId}"]`)
 })
 
-Cypress.Commands.add('delay', (period: number) => {
-  const log = Cypress.log({ name: 'delay', message: period })
+// implementation for "cy.delay(ms)" command
+// note that the branded type for Period is just a number
+// thus we can pass it to cy.wait(n) command
+Cypress.Commands.add('delay', (period: Milliseconds) => {
+  const log = Cypress.log({
+    name: 'delay',
+    message: `${period} millisecond(s)`,
+  })
   return cy.wait(period, { log: false })
 })
