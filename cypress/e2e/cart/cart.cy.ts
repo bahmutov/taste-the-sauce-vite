@@ -1,6 +1,6 @@
 import { LoginPage } from '@support/pages/login.page'
 import { InventoryPage } from '@support/pages/inventory.page'
-import { LoginInfo } from '..'
+import { LoginInfo, seconds } from '..'
 import { InventoryData } from '@fixtures/inventory-data'
 import { ShoppingCart } from '../../../src/utils/shopping-cart'
 
@@ -40,7 +40,7 @@ describe('Cart', { viewportHeight: 1200 }, () => {
     InventoryPage.getCartBadge()
       .should('have.text', items.length)
       .scrollIntoView()
-      .wait(1000)
+      .wait(seconds(1))
       .click()
     // confirm we move to the cart page
     // https://on.cypress.io/location

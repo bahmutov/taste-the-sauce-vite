@@ -12,3 +12,18 @@ export interface LoginInfo {
    */
   password: string
 }
+
+/**
+ * Returns milliseconds for the given number of seconds.
+ */
+export function seconds(ms: number): number {
+  return ms * 1000
+}
+
+/**
+ * Returns milliseconds for the given number of milliseconds.
+ * Just useful for clarity.
+ */
+export function ms(ms: number): number {
+  return ms
+}
