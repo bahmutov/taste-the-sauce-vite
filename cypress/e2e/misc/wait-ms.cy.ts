@@ -1,4 +1,4 @@
-import { seconds, isMilliseconds } from '..'
+import { seconds, isMilliseconds, assertMilliseconds } from '..'
 
 describe('Waiting with branded types', () => {
   it('waits using seconds and ms', () => {
@@ -15,10 +15,15 @@ describe('Waiting with branded types', () => {
 
     // what happens if you do NOT cast the delay period?
 
-    // use "isMilliseconds" type predicate function to guard the delay
+    // TODO: use "isMilliseconds" type predicate function to guard the delay
     const n = 3000
     if (isMilliseconds(n)) {
       cy.delay(n)
     }
+
+    // TODO: use "assertMilliseconds" function to assert the delay period type
+    const m = 300
+    assertMilliseconds(m)
+    cy.delay(m)
   })
 })

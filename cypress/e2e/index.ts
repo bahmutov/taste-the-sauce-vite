@@ -58,3 +58,21 @@ export function ms(ms: Milliseconds): Milliseconds {
 export function isMilliseconds(n: number): n is Milliseconds {
   return typeof n === 'number' && n > 0
 }
+
+/**
+ * Asserts that the given number is of type Milliseconds
+ * @param n Number to check
+ * @example
+ * ```ts
+ * const n = 5000
+ * assertMilliseconds(n)
+ * // n is now of type Milliseconds
+ * // there should be no type error
+ * cy.delay(n)
+ * ```
+ */
+export function assertMilliseconds(n: number): asserts n is Milliseconds {
+  if (typeof n !== 'number' || n < 1) {
+    throw new Error(`Expected positive number for Milliseconds, got ${n}`)
+  }
+}
