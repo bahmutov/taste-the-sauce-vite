@@ -39,3 +39,22 @@ export function ms(ms: Milliseconds): Milliseconds {
 
   return ms as Milliseconds
 }
+
+/**
+ * Branded type predicate function to let TypeScript know
+ * that the given number is of type Milliseconds
+ * @param n Number to check
+ * @returns true if the number is Milliseconds
+ * @example
+ * ```ts
+ * const n = 5000
+ * if (isMilliseconds(n)) {
+ *   // n is now of type Milliseconds
+ *   // there should be no type error
+ *   cy.delay(n)
+ * }
+ * ```
+ */
+export function isMilliseconds(n: number): n is Milliseconds {
+  return typeof n === 'number' && n > 0
+}

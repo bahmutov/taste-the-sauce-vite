@@ -750,8 +750,8 @@
     "Waiting with branded types / waits using seconds and ms": [
       {
         "url": "/",
-        "duration": 2668,
-        "commandsCount": 7
+        "duration": 6365,
+        "commandsCount": 9
       }
     ]
   },
