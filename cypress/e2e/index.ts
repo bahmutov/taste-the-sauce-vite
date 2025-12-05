@@ -42,7 +42,7 @@ export function ms(ms: Milliseconds): Milliseconds {
 
 /**
  * Branded type predicate function to let TypeScript know
- * that the given number is of type Milliseconds
+ * that the given number is of type Milliseconds and is less than 10 minutes.
  * @param n Number to check
  * @returns true if the number is Milliseconds
  * @example
@@ -56,11 +56,12 @@ export function ms(ms: Milliseconds): Milliseconds {
  * ```
  */
 export function isMilliseconds(n: number): n is Milliseconds {
-  return typeof n === 'number' && n > 0
+  return typeof n === 'number' && n > 0 && n < 600_000
 }
 
 /**
  * Asserts that the given number is of type Milliseconds
+ * and is less than 10 minutes.
  * @param n Number to check
  * @example
  * ```ts
@@ -72,7 +73,7 @@ export function isMilliseconds(n: number): n is Milliseconds {
  * ```
  */
 export function assertMilliseconds(n: number): asserts n is Milliseconds {
-  if (typeof n !== 'number' || n < 1) {
+  if (typeof n !== 'number' || n < 1 || n >= 600_000) {
     throw new Error(`Expected positive number for Milliseconds, got ${n}`)
   }
 }
