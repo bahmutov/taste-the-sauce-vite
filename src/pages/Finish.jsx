@@ -1,13 +1,13 @@
 import React from 'react'
-import { withRouter } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import SwagLabsFooter from '../components/Footer'
 import HeaderContainer from '../components/HeaderContainer'
-import PropTypes from 'prop-types'
 import Button, { BUTTON_SIZES } from '../components/Button'
 import { ROUTES } from '../utils/Constants'
 import './Finish.css'
 
-const Finish = ({ history }) => {
+const Finish = () => {
+  const navigate = useNavigate()
   return (
     <div id="page_wrapper" className="page_wrapper">
       <div id="contents_wrapper">
@@ -28,7 +28,7 @@ const Finish = ({ history }) => {
           />
           <Button
             label="Back Home"
-            onClick={() => history.push(ROUTES.INVENTORY)}
+            onClick={() => navigate(ROUTES.INVENTORY)}
             size={BUTTON_SIZES.SMALL}
             testId="back-to-products"
           />
@@ -38,13 +38,5 @@ const Finish = ({ history }) => {
     </div>
   )
 }
-Finish.propTypes = {
-  /**
-   * The history
-   */
-  history: PropTypes.shape({
-    push: PropTypes.func.isRequired,
-  }).isRequired,
-}
 
-export default withRouter(Finish)
+export default Finish

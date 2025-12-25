@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { withRouter } from 'react-router-dom'
 import { isPerformanceGlitchUser, isProblemUser } from '../utils/Credentials'
 import { InventoryData } from '../utils/InventoryData.js'
 import InventoryListItem from '../components/InventoryListItem'
@@ -99,4 +98,4 @@ const Inventory = () => {
   )
 }
 
-export default withRouter(Inventory)
+export default Inventory

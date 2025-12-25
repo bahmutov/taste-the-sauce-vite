@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { withRouter } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { ShoppingCart } from '../utils/shopping-cart'
 import { isProblemUser } from '../utils/Credentials'
@@ -8,7 +8,8 @@ import { ROUTES } from '../utils/Constants'
 import Button, { BUTTON_SIZES, BUTTON_TYPES } from './Button'
 
 const InventoryListItem = (props) => {
-  const { desc, id, image_url, history, name, price } = props
+  const { desc, id, image_url, name, price } = props
+  const navigate = useNavigate()
   const [itemInCart, setItemInCart] = useState(ShoppingCart.isItemInCart(id))
 
   const addToCart = (itemId) => {
@@ -70,7 +71,7 @@ const InventoryListItem = (props) => {
           id={`item_${id}_img_link`}
           onClick={(evt) => {
             evt.preventDefault()
-            history.push(itemLink)
+            navigate(itemLink)
           }}
         >
           <img alt={name} className="inventory_item_img" src={`/img/${url}`} />
@@ -83,7 +84,7 @@ const InventoryListItem = (props) => {
             id={`item_${id}_title_link`}
             onClick={(evt) => {
               evt.preventDefault()
-              history.push(itemLink)
+              navigate(itemLink)
             }}
           >
             <div className="inventory_item_name">{name}</div>
@@ -105,12 +106,6 @@ InventoryListItem.propTypes = {
    */
   desc: PropTypes.string.isRequired,
   /**
-   * The history
-   */
-  history: PropTypes.shape({
-    push: PropTypes.func.isRequired,
-  }).isRequired,
-  /**
    * The id of the list item
    */
   id: PropTypes.number.isRequired,
@@ -128,4 +123,4 @@ InventoryListItem.propTypes = {
   price: PropTypes.number.isRequired,
 }
 
-export default withRouter(InventoryListItem)
+export default InventoryListItem

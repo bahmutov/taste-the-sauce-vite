@@ -30,14 +30,18 @@ export const LoginPage = {
     LoginPage.getUsername().should('have.class', 'error')
     LoginPage.getPassword().should('have.class', 'error')
   },
+
+  /** Closes the error message box */
+  closeError() {
+    LoginPage.getError().find('button.error-button').realClick()
+  },
+
   /**
    * Logs the user and caches the session
    * @param username
    * @param password
    */
   login(username: string, password: string) {
-    cy.section(`login as ${username}`)
-
     // https://on.cypress.io/session
     cy.session(
       `user ${username} login`,

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { withRouter } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import { useState } from 'react'
 import './Login.css'
 import {
@@ -12,11 +12,22 @@ import InputError, { INPUT_TYPES } from '../components/InputError'
 import SubmitButton from '../components/SubmitButton'
 import ErrorMessage from '../components/ErrorMessage'
 
-function Login(props) {
-  const { history, location } = props
+const SKELETON_LOADING_DURATION = 1000
+
+function Login() {
+  const navigate = useNavigate()
+  const location = useLocation()
   const [error, setError] = useState('')
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false)
+    }, SKELETON_LOADING_DURATION)
+    return () => clearTimeout(timer)
+  }, [])
 
   useEffect(() => {
     if (location.state) {
@@ -50,7 +61,7 @@ function Login(props) {
       }
 
       // Redirect!
-      history.push(ROUTES.INVENTORY)
+      navigate(ROUTES.INVENTORY)
     } else {
       return setError(
         'Username and password do not match any user in this service',
@@ -66,6 +77,35 @@ function Login(props) {
 
   const handlePassChange = (evt) => {
     setPassword(evt.target.value)
+  }
+
+  if (isLoading) {
+    return (
+      <div>
+        <div className="login_logo" />
+        <div className="login_wrapper">
+          <div className="login_wrapper-inner">
+            <div id="login_button_container" className="form_column">
+              <div className="login-box">
+                <div className="skeleton skeleton-heading"></div>
+                <div className="skeleton skeleton-text"></div>
+                <div className="skeleton skeleton-text"></div>
+                <div className="skeleton skeleton-heading"></div>
+                <div className="skeleton skeleton-text"></div>
+              </div>
+            </div>
+            <div className="bot_column" />
+          </div>
+          <div className="login_credentials_wrap">
+            <div className="login_credentials_wrap-inner">
+              <div className="skeleton skeleton-heading"></div>
+              <div className="skeleton skeleton-text"></div>
+              <div className="skeleton skeleton-text"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
   }
 
   return (
@@ -143,4 +183,4 @@ function Login(props) {
   )
 }
 
-export default withRouter(Login)
+export default Login

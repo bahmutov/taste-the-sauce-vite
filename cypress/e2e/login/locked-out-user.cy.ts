@@ -36,7 +36,7 @@ describe('Locked out user', () => {
       // wait 1 second for clarity
       .wait(1000)
       .find('button.error-button')
-      .click()
+      .realClick()
     // confirm the errors go away, but the input fields are not cleared
     cy.log('**errors go away**')
     cy.contains('[data-test=error]', 'locked out').should('not.exist')
@@ -73,8 +73,7 @@ describe('Locked out user', () => {
       .and('be.visible')
       // wait 1 second for clarity
       .wait(1000)
-      .find('button.error-button')
-      .click()
+    LoginPage.closeError()
     // confirm the errors go away, but the input fields are not cleared
     LoginPage.noErrors()
     LoginPage.getUsername().should('have.value', user.username)

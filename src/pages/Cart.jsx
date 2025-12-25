@@ -1,5 +1,5 @@
 import React from 'react'
-import { withRouter } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { ROUTES } from '../utils/Constants'
 import { ShoppingCart } from '../utils/shopping-cart'
 import { InventoryData } from '../utils/InventoryData'
@@ -9,7 +9,8 @@ import HeaderContainer from '../components/HeaderContainer'
 import Button, { BUTTON_SIZES, BUTTON_TYPES } from '../components/Button'
 import './Cart.css'
 
-const Cart = ({ history }) => {
+const Cart = () => {
+  const navigate = useNavigate()
   const contents = ShoppingCart.getCartContents()
 
   return (
@@ -30,7 +31,7 @@ const Cart = ({ history }) => {
                 label="Continue Shopping"
                 onClick={(evt) => {
                   evt.preventDefault()
-                  history.push(ROUTES.INVENTORY)
+                  navigate(ROUTES.INVENTORY)
                 }}
                 size={BUTTON_SIZES.MEDIUM}
                 testId="continue-shopping"
@@ -43,7 +44,7 @@ const Cart = ({ history }) => {
                 customClass="checkout_button"
                 onClick={(evt) => {
                   evt.preventDefault()
-                  history.push(ROUTES.CHECKOUT_STEP_ONE)
+                  navigate(ROUTES.CHECKOUT_STEP_ONE)
                 }}
                 size={BUTTON_SIZES.MEDIUM}
                 testId="checkout"
@@ -59,4 +60,4 @@ const Cart = ({ history }) => {
   )
 }
 
-export default withRouter(Cart)
+export default Cart

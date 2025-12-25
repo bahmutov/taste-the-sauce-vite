@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { withRouter } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import { isProblemUser } from '../utils/Credentials'
 import { ROUTES } from '../utils/Constants'
 import { ShoppingCart } from '../utils/shopping-cart'
@@ -10,20 +10,21 @@ import SwagLabsFooter from '../components/Footer'
 import './InventoryItem.css'
 
 export const InventoryItem = (props) => {
+  const navigate = useNavigate()
+  const [searchParams] = props.search
+    ? [new URLSearchParams(props.search)]
+    : useSearchParams()
+
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
-  const { history } = props
+
   // Get our query params now
-  const query = window.location.search.includes('id')
-    ? window.location.search
-    : props.search
-  const queryParams = new URLSearchParams(query)
   let inventoryId = -1
   let item
 
-  if (queryParams.has('id')) {
-    inventoryId = parseInt(queryParams.get('id'))
+  if (searchParams.has('id')) {
+    inventoryId = parseInt(searchParams.get('id'))
     // console.log({ inventoryId })
   }
 
@@ -49,7 +50,7 @@ export const InventoryItem = (props) => {
   )
 
   const goBack = () => {
-    history.push(ROUTES.INVENTORY)
+    navigate(ROUTES.INVENTORY)
   }
 
   const addToCart = (itemId) => {
@@ -144,4 +145,4 @@ export const InventoryItem = (props) => {
   )
 }
 
-export default withRouter(InventoryItem)
+export default InventoryItem

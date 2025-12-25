@@ -1,13 +1,13 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTimes } from "@fortawesome/free-solid-svg-icons";
-import "./ErrorMessage.css";
+import React from 'react'
+import PropTypes from 'prop-types'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
+import './ErrorMessage.css'
 
 const ErrorMessage = ({ isError, errorMessage, onClick, ...props }) => {
   return (
     <div
-      className={`error-message-container${isError ? " error" : ""}`}
+      className={`error-message-container${isError ? ' error' : ''}`}
       {...props}
     >
       {isError && (
@@ -21,8 +21,8 @@ const ErrorMessage = ({ isError, errorMessage, onClick, ...props }) => {
         </h3>
       )}
     </div>
-  );
-};
+  )
+}
 
 ErrorMessage.propTypes = {
   /**
@@ -37,6 +37,6 @@ ErrorMessage.propTypes = {
    * The on change handler
    */
   onClick: PropTypes.func.isRequired,
-};
+}
 
-export default ErrorMessage;
+export default ErrorMessage

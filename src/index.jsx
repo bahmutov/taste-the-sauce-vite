@@ -1,6 +1,6 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import { Route, BrowserRouter as Router } from "react-router-dom";
+import { createRoot } from "react-dom/client";
+import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
 import "./index.css";
 import Login from "./pages/Login";
 import Inventory from "./pages/Inventory";
@@ -12,16 +12,17 @@ import Finish from "./pages/Finish";
 import { ROUTES } from "./utils/Constants";
 import PrivateRoute from "./components/PrivateRoute";
 
-const routing = (
+const root = createRoot(document.getElementById("root"));
+root.render(
   <Router>
-    <Route exact path={ROUTES.LOGIN} component={Login} />
-    <PrivateRoute path={ROUTES.INVENTORY} component={Inventory} />
-    <PrivateRoute path={ROUTES.INVENTORY_LIST} component={InventoryItem} />
-    <PrivateRoute path={ROUTES.CART} component={Cart} />
-    <PrivateRoute path={ROUTES.CHECKOUT_STEP_ONE} component={CheckOutStepOne} />
-    <PrivateRoute path={ROUTES.CHECKOUT_STEP_TWO} component={CheckOutStepTwo} />
-    <PrivateRoute path={ROUTES.CHECKOUT_COMPLETE} component={Finish} />
+    <Routes>
+      <Route path={ROUTES.LOGIN} element={<Login />} />
+      <Route path={ROUTES.INVENTORY} element={<PrivateRoute element={<Inventory />} />} />
+      <Route path={ROUTES.INVENTORY_LIST} element={<PrivateRoute element={<InventoryItem />} />} />
+      <Route path={ROUTES.CART} element={<PrivateRoute element={<Cart />} />} />
+      <Route path={ROUTES.CHECKOUT_STEP_ONE} element={<PrivateRoute element={<CheckOutStepOne />} />} />
+      <Route path={ROUTES.CHECKOUT_STEP_TWO} element={<PrivateRoute element={<CheckOutStepTwo />} />} />
+      <Route path={ROUTES.CHECKOUT_COMPLETE} element={<PrivateRoute element={<Finish />} />} />
+    </Routes>
   </Router>
 );
-
-ReactDOM.render(routing, document.getElementById("root"));

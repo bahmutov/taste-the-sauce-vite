@@ -1,13 +1,13 @@
 import React from 'react'
-import { withRouter } from 'react-router-dom'
-import PropTypes from 'prop-types'
+import { useNavigate } from 'react-router-dom'
 import { slide as Menu } from 'react-burger-menu'
 import { ShoppingCart } from '../utils/shopping-cart'
 import { ROUTES } from '../utils/Constants'
 import { isProblemUser, removeCredentials } from '../utils/Credentials'
 import './DrawerMenu.css'
 
-const DrawerMenu = ({ history }) => {
+const DrawerMenu = () => {
+  const navigate = useNavigate()
   const resetStorage = () => {
     // Wipe out our shopping cart now
     ShoppingCart.resetCart()
@@ -34,7 +34,7 @@ const DrawerMenu = ({ history }) => {
         href="#"
         onClick={(evt) => {
           evt.preventDefault()
-          history.push(ROUTES.INVENTORY)
+          navigate(ROUTES.INVENTORY)
         }}
       >
         All Items
@@ -49,7 +49,7 @@ const DrawerMenu = ({ history }) => {
         onClick={(evt) => {
           evt.preventDefault()
           removeCredentials()
-          history.push(ROUTES.LOGIN)
+          navigate(ROUTES.LOGIN)
         }}
       >
         Logout
@@ -68,13 +68,5 @@ const DrawerMenu = ({ history }) => {
     </Menu>
   )
 }
-DrawerMenu.propTypes = {
-  /**
-   * The history
-   */
-  history: PropTypes.shape({
-    push: PropTypes.func.isRequired,
-  }).isRequired,
-}
 
-export default withRouter(DrawerMenu)
+export default DrawerMenu

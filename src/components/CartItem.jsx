@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { withRouter } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { isProblemUser } from '../utils/Credentials'
 import { ROUTES } from '../utils/Constants'
@@ -7,7 +7,8 @@ import { ShoppingCart } from '../utils/shopping-cart'
 import Button, { BUTTON_SIZES, BUTTON_TYPES } from './Button'
 import './CartItem.css'
 
-const CartItem = ({ item, history, showButton }) => {
+const CartItem = ({ item, showButton }) => {
+  const navigate = useNavigate()
   const [itemVisible, setItemVisible] = useState(true)
   const [quantity, setQuantity] = useState(1)
 
@@ -56,7 +57,7 @@ const CartItem = ({ item, history, showButton }) => {
             id={`item_${id}_title_link`}
             onClick={(evt) => {
               evt.preventDefault()
-              history.push(itemLink)
+              navigate(itemLink)
             }}
           >
             <div className="inventory_item_name">{name}</div>
@@ -93,12 +94,6 @@ CartItem.propTypes = {
     price: PropTypes.number.isRequired,
   }),
   /**
-   * The history
-   */
-  history: PropTypes.shape({
-    push: PropTypes.func.isRequired,
-  }).isRequired,
-  /**
    * Show the remove button
    */
   showButton: PropTypes.bool,
@@ -108,4 +103,4 @@ CartItem.defaultProps = {
   showButton: false,
 }
 
-export default withRouter(CartItem)
+export default CartItem

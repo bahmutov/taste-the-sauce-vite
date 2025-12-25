@@ -1,9 +1,6 @@
 // first import the 3rd party Cypress plugins
 // to make them available in every command
 
-// https://www.npmjs.com/package/cypress-plugin-steps
-import 'cypress-plugin-steps'
-
 // https://github.com/bahmutov/cypress-code-coverage
 import '@bahmutov/cypress-code-coverage/support'
 
@@ -11,9 +8,6 @@ import '@bahmutov/cypress-code-coverage/support'
 import 'cypress-data-session'
 // https://github.com/bahmutov/cypress-map
 import 'cypress-map'
-
-// https://github.com/sclavijosuero/wick-a11y
-import 'wick-a11y'
 
 // https://www.chaijs.com/plugins/chai-sorted/
 // @ts-ignore
@@ -25,12 +19,5 @@ require('cypress-watch-and-reload/support')
 // import custom commands
 import './commands'
 
-// https://glebbahmutov.com/blog/collect-tested-urls/
-// @ts-ignore
-import { configureVisitedUrls } from 'cypress-visited-urls'
-
-configureVisitedUrls({
-  filterUrl(url: string) {
-    return url.replace(/id=\d+/, 'id=:id')
-  },
-})
+// https://github.com/dmtrKovalenko/cypress-real-events
+import 'cypress-real-events'

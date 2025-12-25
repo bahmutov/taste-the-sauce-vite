@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { withRouter } from 'react-router-dom'
-import PropTypes from 'prop-types'
+import { useNavigate } from 'react-router-dom'
 import { ShoppingCart } from '../utils/shopping-cart'
 import { ROUTES } from '../utils/Constants'
 import './CartButton.css'
 
-const CartButton = (props) => {
-  const { history } = props
+const CartButton = () => {
+  const navigate = useNavigate()
   let cartBadge = ''
   const [cartContents, setCartContents] = useState(
     ShoppingCart.getCartContents(),
@@ -26,19 +25,10 @@ const CartButton = (props) => {
   }
 
   return (
-    <a className="shopping_cart_link" onClick={() => history.push(ROUTES.CART)}>
+    <a className="shopping_cart_link" onClick={() => navigate(ROUTES.CART)}>
       {cartBadge}
     </a>
   )
 }
 
-CartButton.propTypes = {
-  /**
-   * The history
-   */
-  history: PropTypes.shape({
-    push: PropTypes.func.isRequired,
-  }).isRequired,
-}
-
-export default withRouter(CartButton)
+export default CartButton

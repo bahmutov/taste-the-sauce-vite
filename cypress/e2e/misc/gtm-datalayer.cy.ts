@@ -38,9 +38,7 @@ describe('dataLayer', () => {
       })
     // add the item "Sauce Labs Onesie" to the cart
     InventoryPage.addItemToCart('Sauce Labs Onesie')
-    // confirm the dataLayer.push method was called
-    // Note: this layer is called by our application code
-    // and by the installed google tag manager script
+    // confirm the dataLayer.push method was called at least once
     cy.get('@push').should('have.been.called')
     // confirm the dataLayer.push method was called with
     // { event: 'addToCart' }

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { withRouter } from "react-router-dom";
-import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 import { isProblemUser } from "../utils/Credentials";
 import { ROUTES } from "../utils/Constants";
 import SwagLabsFooter from "../components/Footer";
@@ -11,7 +10,8 @@ import SubmitButton from "../components/SubmitButton";
 import Button, { BUTTON_SIZES, BUTTON_TYPES } from "../components/Button";
 import "./CheckOutStepOne.css";
 
-const CheckOutStepOne = ({ history }) => {
+const CheckOutStepOne = () => {
+  const navigate = useNavigate();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [postalCode, setPostalCode] = useState("");
@@ -49,7 +49,7 @@ const CheckOutStepOne = ({ history }) => {
     }
 
     // If we're here, we have our required info. Redirect!
-    history.push(ROUTES.CHECKOUT_STEP_TWO);
+    navigate(ROUTES.CHECKOUT_STEP_TWO);
 
     return "";
   };
@@ -112,7 +112,7 @@ const CheckOutStepOne = ({ history }) => {
                   label="Cancel"
                   onClick={(evt) => {
                     evt.preventDefault();
-                    history.push(ROUTES.CART);
+                    navigate(ROUTES.CART);
                   }}
                   size={BUTTON_SIZES.MEDIUM}
                   testId="cancel"
@@ -132,13 +132,5 @@ const CheckOutStepOne = ({ history }) => {
     </div>
   );
 };
-CheckOutStepOne.propTypes = {
-  /**
-   * The history
-   */
-  history: PropTypes.shape({
-    push: PropTypes.func.isRequired,
-  }).isRequired,
-};
 
-export default withRouter(CheckOutStepOne);
+export default CheckOutStepOne;

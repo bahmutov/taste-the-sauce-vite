@@ -1,6 +1,5 @@
 import React from 'react'
-import { withRouter } from 'react-router-dom'
-import PropTypes from 'prop-types'
+import { useNavigate } from 'react-router-dom'
 import { isProblemUser } from '../utils/Credentials'
 import { ROUTES } from '../utils/Constants'
 import { ShoppingCart } from '../utils/shopping-cart'
@@ -11,7 +10,8 @@ import HeaderContainer from '../components/HeaderContainer'
 import Button, { BUTTON_SIZES, BUTTON_TYPES } from '../components/Button'
 import './CheckOutStepTwo.css'
 
-const CheckOutStepTwo = ({ history }) => {
+const CheckOutStepTwo = () => {
+  const navigate = useNavigate()
   const clearCart = () => {
     // No cart clear on order complete for the problem user
     if (!isProblemUser()) {
@@ -71,7 +71,7 @@ const CheckOutStepTwo = ({ history }) => {
                   label="Cancel"
                   onClick={(evt) => {
                     evt.preventDefault()
-                    history.push(ROUTES.INVENTORY)
+                    navigate(ROUTES.INVENTORY)
                   }}
                   size={BUTTON_SIZES.MEDIUM}
                   testId="cancel"
@@ -83,7 +83,7 @@ const CheckOutStepTwo = ({ history }) => {
                   onClick={(evt) => {
                     evt.preventDefault()
                     clearCart()
-                    history.push(ROUTES.CHECKOUT_COMPLETE)
+                    navigate(ROUTES.CHECKOUT_COMPLETE)
                   }}
                   size={BUTTON_SIZES.MEDIUM}
                   testId="finish"
@@ -98,13 +98,5 @@ const CheckOutStepTwo = ({ history }) => {
     </div>
   )
 }
-CheckOutStepTwo.propTypes = {
-  /**
-   * The history
-   */
-  history: PropTypes.shape({
-    push: PropTypes.func.isRequired,
-  }).isRequired,
-}
 
-export default withRouter(CheckOutStepTwo)
+export default CheckOutStepTwo

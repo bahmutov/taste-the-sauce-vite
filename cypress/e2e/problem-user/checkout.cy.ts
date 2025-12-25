@@ -41,7 +41,7 @@ describe('Problem user', { viewportHeight: 1200 }, () => {
       .should('be.visible')
       // find the close button and click it to get rid of the error
       .find('button.error-button')
-      .click()
+      .realClick()
     cy.get('.error').should('not.exist')
   })
 })
