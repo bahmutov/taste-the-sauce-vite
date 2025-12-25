@@ -14,6 +14,7 @@ describe('Login form skeleton', () => {
     // skeleton should go away
     cy.get('.skeleton').should('not.exist')
     // and the login form is immediately visible (within 100ms)
+    // Tip: use the LoginPage username input field to check
     cy.get(LoginPage.selectors.username, { timeout: 100 }).should('be.visible')
   })
 })
