@@ -4,7 +4,6 @@
     "types": [
       "cypress",
       "cypress-map",
-      "cypress-plugin-steps",
       "vite/client",
       "vite-plugin-svgr/client"
     ],
@@ -24,7 +23,7 @@
     }
   },
   "include": [
-    "cypress/support/component.jsx",
+    "cypress/support/component.js",
     "cypress/support/**/*.ts",
     "cypress/e2e/**/*.js",
     "cypress/e2e/**/*.ts",

@@ -11,10 +11,6 @@ import reloadWatch from 'cypress-watch-and-reload/plugins'
 import codeCoveragePlugin from '@bahmutov/cypress-code-coverage/plugin'
 // https://github.com/iFaxity/vite-plugin-istanbul
 import IstanbulPlugin from 'vite-plugin-istanbul'
-// https://github.com/bahmutov/cypress-visited-urls
-import visitedUrlsPlugin from 'cypress-visited-urls/src/plugin'
-// https://github.com/sclavijosuero/wick-a11y
-import addAccessibilityTasks from 'wick-a11y/accessibility-tasks'
 
 const __dirname = import.meta.dirname
 
@@ -51,12 +47,6 @@ export default defineConfig({
         exclude: ['**/src/service*.js'],
         quiet: true,
       },
-      visitedUrls: {
-        // collect each URL the test runner visits
-        // https://glebbahmutov.com/blog/collect-tested-urls/
-        collect: true,
-        urlsFilename: 'cypress-visited-urls.json',
-      },
     },
     setupNodeEvents(cypressOn, config) {
       // fix https://github.com/cypress-io/cypress/issues/22428
@@ -67,8 +57,6 @@ export default defineConfig({
       registerDataSession(on, config)
       reloadWatch(on, config)
       codeCoveragePlugin(on, config)
-      visitedUrlsPlugin(on, config)
-      addAccessibilityTasks(on, config)
       // IMPORTANT to return the config object
       // with the any changed environment variables
       return config
@@ -83,9 +71,8 @@ export default defineConfig({
         plugins: [
           IstanbulPlugin({
             include: 'src/*',
+            exclude: ['**/*.cy.jsx'],
             extension: ['.js', '.jsx', '.ts', '.tsx'],
-            // what files do we want to exclude when
-            // instrumenting the component tests?
           }),
         ],
         resolve: {
