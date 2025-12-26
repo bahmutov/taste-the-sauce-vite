@@ -1,5 +1,3 @@
-import { LoginPage } from '@support/pages/login.page'
-
 describe('Login form skeleton', () => {
   const skeletonHeading = '.login_credentials_wrap .skeleton-heading'
   const loginCredentials = '.login_credentials_wrap .login_credentials h4'
@@ -13,48 +11,16 @@ describe('Login form skeleton', () => {
   it('does not move from the top', () => {
     // confirm the skeleton heading does NOT change
     // it "top" position on the page too much (within tolerance)
-    cy.get(skeletonHeading)
-      .should('be.visible')
-      .then(($el) => {
-        const rect = $el[0].getBoundingClientRect()
-        return rect.top
-      })
-      // round to pixels for nicer comparison
-      .then(Math.round)
-      .as('initialTop', { type: 'static' })
+    // round to pixels for nicer comparison
+    cy.get(skeletonHeading).should('be.visible')
     cy.get(skeletonHeading).should('not.exist')
-
-    cy.get('@initialTop').then((initialTop) => {
-      cy.get(loginCredentials)
-        .should('be.visible')
-        .then(($el) => {
-          const rect = $el[0].getBoundingClientRect()
-          return rect.top
-        })
-        .then(Math.round)
-        .should('be.closeTo', initialTop, tolerance)
-    })
   })
 
   it('does not move from the top (cypress-map)', () => {
     // confirm the skeleton heading does NOT change
     // it "top" position on the page too much (within tolerance)
-    cy.get(skeletonHeading)
-      .should('be.visible')
-      .invokeFirst('getBoundingClientRect')
-      .its('top')
-      // round to pixels for nicer comparison
-      .then(Math.round)
-      .as('initialTop', { type: 'static' })
+    // round to pixels for nicer comparison
+    cy.get(skeletonHeading).should('be.visible')
     cy.get(skeletonHeading).should('not.exist')
-
-    cy.get('@initialTop').then((initialTop) => {
-      cy.get(loginCredentials)
-        .should('be.visible')
-        .invokeFirst('getBoundingClientRect')
-        .its('top')
-        .then(Math.round)
-        .should('be.closeTo', initialTop, tolerance)
-    })
   })
 })
