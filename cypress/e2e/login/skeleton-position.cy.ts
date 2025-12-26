@@ -1,5 +1,3 @@
-import { LoginPage } from '@support/pages/login.page'
-
 describe('Login form skeleton', () => {
   const skeletonHeading = '.login_credentials_wrap .skeleton-heading'
   const loginCredentials = '.login_credentials_wrap .login_credentials h4'
