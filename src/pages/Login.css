@@ -74,6 +74,8 @@
   margin-bottom: 15px;
 }
 .skeleton-heading {
+  position: relative;
+  top: 100px;
   height: 24px;
   width: 60%;
 }
