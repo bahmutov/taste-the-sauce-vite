@@ -17,9 +17,6 @@ describe('Inventory page', () => {
       .map(parseFloat)
       .print('prices %o')
       // confirm the numbers are sorted in ascending order
-      .then((prices) => {
-        const sortedPrices = [...prices].sort((a, b) => a - b)
-        expect(prices).to.deep.equal(sortedPrices)
-      })
+      .should('be.ascending')
   })
 })
