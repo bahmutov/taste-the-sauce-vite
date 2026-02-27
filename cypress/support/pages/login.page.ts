@@ -1,3 +1,5 @@
+import type { LoginInfo } from '../../e2e'
+
 export const LoginPage = {
   // common element selectors we might need
   selectors: {
@@ -65,5 +67,31 @@ export const LoginPage = {
         },
       },
     )
+  },
+
+  /**
+   * Logs in using the UI form.
+   */
+  loginForm(username: string, password: string) {
+    cy.visit('/')
+    cy.get(LoginPage.selectors.form).fillForm({
+      [LoginPage.selectors.username]: username,
+      [LoginPage.selectors.password]: password,
+    })
+    LoginPage.getLogin().click()
+    cy.location('pathname').should('equal', '/inventory')
+  },
+
+  /**
+   * Finds the user account for particular user name
+   * and logs in using the session approach.
+   */
+  loginUser(name: 'standard' | 'problem' | 'lockedOut' | 'glitch') {
+    cy.env(['users'])
+      .its('users')
+      .its(name)
+      .then((user: LoginInfo) => {
+        LoginPage.login(user.username, user.password)
+      })
   },
 } as const

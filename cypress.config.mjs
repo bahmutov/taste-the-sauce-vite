@@ -7,21 +7,20 @@ import cypressOnFix from 'cypress-on-fix'
 import path from 'path'
 // https://github.com/bahmutov/cypress-watch-and-reload
 import reloadWatch from 'cypress-watch-and-reload/plugins'
-
+// https://github.com/bahmutov/cypress-code-coverage
+// import codeCoveragePlugin from '@bahmutov/cypress-code-coverage/plugin'
 // https://github.com/iFaxity/vite-plugin-istanbul
 import IstanbulPlugin from 'vite-plugin-istanbul'
 
 const __dirname = import.meta.dirname
 
 export default defineConfig({
-  // TODO: add option to disallow Cypress.env completely
+  allowCypressEnv: false,
   e2e: {
     // baseUrl, etc
     baseUrl: 'http://localhost:3000',
     supportFile: 'cypress/support/e2e.ts',
     experimentalRunAllSpecs: true,
-    // split "env" into "env" for sensitive values
-    // and "expose" for non-sensitive values
     env: {
       users: {
         standard: {
@@ -41,9 +40,15 @@ export default defineConfig({
           password: 'secret_sauce',
         },
       },
+    },
+    expose: {
       // list the files and file patterns to watch
       'cypress-watch-and-reload': {
         watch: ['src/**'],
+      },
+      coverage: {
+        exclude: ['**/src/service*.js'],
+        quiet: true,
       },
     },
     setupNodeEvents(cypressOn, config) {
@@ -53,7 +58,8 @@ export default defineConfig({
       // and load any plugins that require the Node environment
       cypressSplit(on, config)
       registerDataSession(on, config)
-      reloadWatch(on, config)
+      // reloadWatch(on, config)
+      // codeCoveragePlugin(on, config)
       // IMPORTANT to return the config object
       // with the any changed environment variables
       return config
@@ -83,6 +89,7 @@ export default defineConfig({
     // allows components to load resources from the public assets folder
     devServerPublicPathRoute: '',
     setupNodeEvents(cypressOn, config) {
+      // codeCoveragePlugin(cypressOn, config)
       // IMPORTANT to return the config object
       // with the any changed environment variables
       return config
