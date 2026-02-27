@@ -2,7 +2,7 @@
 // to make them available in every command
 
 // https://github.com/bahmutov/cypress-code-coverage
-import '@bahmutov/cypress-code-coverage/support'
+// import '@bahmutov/cypress-code-coverage/support'
 
 // https://github.com/bahmutov/cypress-data-session
 import 'cypress-data-session'
@@ -14,7 +14,7 @@ import 'cypress-map'
 chai.use(require('chai-sorted'))
 
 // @ts-ignore
-require('cypress-watch-and-reload/support')
+// require('cypress-watch-and-reload/support')
 
 // import custom commands
 import './commands'
